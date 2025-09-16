@@ -1,0 +1,735 @@
+---
+format: 
+  revealjs:
+    theme: [dracula, ../custom.scss]
+    highlight-style: monokai
+    slide-number: c/t
+    logo: ../images/footer.png
+---
+
+## Introduction to building shiny apps with {rhino} {.title-slide}
+
+::::: columns
+::: {.column width="50%"}
+<img src="../images/shiny.png" height="300"/></img>
+:::
+
+::: {.column width="50%"}
+<img src="../images/rhino.png" height="300"/></img>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Welcome! {.smaller}
+
+::::: columns
+::: {.column width="70%"}
+**Ms. Rory Chen**\
+Manager of Dementias Platform Australia (DPAU)\
+Centre for Healthy Brain Ageing (CHeBA)\
+Discipline of Psychiatry & Mental Health\
+School of Clinical Medicine, UNSW Medicine & Health\
+\
+DPAU: <https://www.dementiasplatform.com.au>\
+LinkedIn: <https://www.linkedin.com/in/rorychenxy>
+:::
+
+::: {.column width="30%"}
+<img src="../images/rory.png"/></img>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Pre-requisites
+
+-   Comfortable with simple operations in R and R Studio
+
+-   No prior knowledge of Shiny apps required.
+
+-   Install the {shiny} and {rhino} package if you haven't already
+
+``` r
+install.packages("shiny") 
+install.packages("rhino")
+```
+
+------------------------------------------------------------------------
+
+## Today's topic
+
+:::::: columns
+::: {.column width="70%"}
+The workshop will run for 1 hour (recorded).
+
+-   What is `Rhino`?
+
+-   Real-world R Shiny App Demo to inspire your own
+
+-   Slides + Coding Example + Exercise
+
+-   Ask questions!
+:::
+
+:::: {.column width="30%"}
+::: {.tenor-gif-embed data-postid="16726100268909331381" data-share-method="host" data-aspect-ratio="1.57595" data-width="100%"}
+<a href="https://tenor.com/view/rhino-gif-16726100268909331381">Rhino Sticker</a>from <a href="https://tenor.com/search/rhino-stickers">Rhino Stickers</a>
+:::
+
+```{=html}
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+```
+::::
+::::::
+
+------------------------------------------------------------------------
+
+## What is `Shiny`?
+
+::::: columns
+::: {.column width="30%"}
+<img src="../images/shiny.png" height="200"/></img>
+:::
+
+::: {.column width="70%"}
+✨`Shiny` is a framework for creating interactive web applications using R code.
+
+-   **UI (User Interface):** How your app looks\
+
+-   **Server:** How your app works\
+
+-   **Reactivity:** User changes input controls → updates output (via server function)
+
+-   <https://rorychenxy.github.io/shiny-workshops/slides/intro-to-shiny.html>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## What is `Rhino`?
+
+::::: columns
+::: {.column width="30%"}
+<img src="../images/rhino.png" height="200"/></img>
+:::
+
+::: {.column width="70%"}
+🦏`Rhino` is an **Enterprise-grade framework** for building Shiny applications
+
+-   Developed by **Appsilon** <https://appsilon.github.io/rhino/>
+
+-   **Opinionated framework** with proven industry experience
+
+-   Modern **software engineering** practices
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Why `Rhino`?
+
+::::::: columns
+:::: {.column width="70%"}
+::: incremental
+-   Clear Code (modules, file structures)
+
+-   Quality Check
+
+-   Automation
+
+-   We will see details later 😎.
+:::
+::::
+
+:::: {.column width="30%"}
+::: {.tenor-gif-embed data-postid="18507096" data-share-method="host" data-aspect-ratio="1.02236" data-width="100%"}
+<a href="https://tenor.com/view/why-why-why-why-me-why-god-oh-god-gif-18507096">Why Why Why GIF</a>from <a href="https://tenor.com/search/why+why-gifs">Why Why GIFs</a>
+:::
+
+```{=html}
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+```
+::::
+:::::::
+
+------------------------------------------------------------------------
+
+## Dementias Platform Australia (DPAU)
+
+::::: columns
+::: {.column width="70%"}
+-   `Led`: UNSW Sydney’s Centre for Healthy Brain Ageing (CHeBA)
+-   `Partnership`:
+    -   Dementias Platform UK (DPUK)
+    -   Alzheimers Diseases Data Initiative (AD Data Initiative)
+-   `Funding support`:
+    -   National Institute of Health (NIH)
+    -   Australian Research Data Commons (ARDC)
+:::
+
+::: {.column width="30%"}
+<img src="../images/dpau.jpg" height="200"/></img>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Real-world R Shiny App Demo - GLADSE
+
+<img src="../images/fair.jpg" height="200"/></img>
+
+-   **Accelerate** the progress in dementia research
+
+-   **Transform** the epidemiology of ageing and dementia
+
+-   Global Ageing and Dementia Study Explorer (`GLADSE`) <https://portal.dementiasplatform.com.au/crs-metadata-explorer>
+
+------------------------------------------------------------------------
+
+## GLADSE File Structure
+
+```{r}
+#| echo: true
+#| eval: false
+fs::dir_tree("./github/gladse", recurse = 2)
+```
+
+   
+
+::::: columns
+::: {.column width="50%"}
+``` plaintext
+~/gladse
+├── app
+│   ├── data
+│   │   ├── crsdir_df.fst
+│   │   ├── crslist.fst
+│   │   ├── csurvone_df.fst
+│   │   ├── csurv_filter.fst
+│   │   ├── csurv_matrix.fst
+│   │   ├── filter_df.fst
+│   │   ├── map_filter.rda
+│   │   ├── measurement_inv.fst
+│   │   ├── meta_filter.fst
+│   │   ├── repolist.fst
+│   │   └── varinfo.fst
+│   ├── js
+│   │   └── index.js
+│   ├── logic
+│   │   ├── footer.R
+│   │   ├── value_map.R
+│   │   ├── vlabel.R
+│   │   └── __init__.R
+│   ├── main.R
+│   ├── static
+│   │   ├── favicon.ico
+│   │   └── images
+│   ├── styles
+│   │   └── main.scss
+│   └── view
+│       ├── connect_map.R
+│       ├── crs_directory.R
+│       ├── crs_filters.R
+│       ├── csurv_matrix.R
+│       ├── dt_table.R
+│       ├── map_filter.R
+│       ├── repo.R
+│       ├── stmt.R
+│       └── __init__.R
+├── app.R
+├── config.yml
+├── dependencies.R
+├── gladse.Rproj
+├── renv
+│   ├── activate.R
+│   ├── library
+│   │   └── windows
+│   ├── settings.json
+│   └── staging
+├── renv.lock
+├── rhino.yml
+├── rsconnect
+│   └── shinyapps.io
+│       ├── dpau
+└── tests
+    ├── cypress
+    │   └── e2e
+    ├── cypress.config.js
+    └── testthat
+        └── test-main.R
+```
+:::
+
+::: {.column width="50%"}
+### Clear Code - Organized File Structure
+
+-   `app/main.R` - Application entry point
+-   `app/logic/` - Business logic (Shiny-independent)
+-   `app/view/` - UI components and modules
+-   `app/static/` - static like pics
+-   `app/styles/` - CSS files
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Exercise 1 – initiate \[Step 1\] {.smaller}
+
+Create your `rhino` app with the `New Project` feature with R studio.
+
+<img src="../images/new-project-rhino.png"/></img>
+
+------------------------------------------------------------------------
+
+## Exercise 1 - Setup \[Step 2\] {.smaller}
+
+::::: columns
+::: {.column width="75%"}
+-   Or Start your Rhino with [`rhino::init("first-rhino-app")`](https://appsilon.github.io/rhino/reference/init.html)
+-   Enable automatic reloading with [`shiny::devmode()`](https://shiny.posit.co/r/reference/shiny/latest/devmode.html).
+-   Run the app with [`shiny::runApp()`](https://shiny.posit.co/r/reference/shiny/latest/runapp).
+-   Check your project directory
+:::
+
+::: {.column width="25%"}
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=2&amp;sec=0" frameborder="0">
+
+</iframe>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Exercise 1 - Hello, World! \[Step 3\] {.smaller}
+
+-   Edit the displayed message in `app/main.R`
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "20"
+
+box::use(
+  shiny[bootstrapPage, div, moduleServer, NS, renderUI, tags, uiOutput],
+)
+
+#' @export
+ui <- function(id) {
+  ns <- NS(id)
+  bootstrapPage(
+    uiOutput(ns("message"))
+  )
+}
+
+#' @export
+server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+    output$message <- renderUI({
+      div(
+        style = "display: flex; justify-content: center; align-items: center; height: 100vh;",
+        tags$h1(
+           tags$a("Hello, World! Check out Rhino docs!", 
+                  href = "https://appsilon.github.io/rhino/")
+        )
+      )
+    })
+  })
+}
+
+```
+
+------------------------------------------------------------------------
+
+## Exercise 1 - `ns <- NS(id)` \[Step 3.5\] {.smaller}
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "21"
+
+box::use(
+  shiny[bootstrapPage, div, moduleServer, NS, renderUI, tags, uiOutput],
+)
+
+#' @export
+ui <- function(id) {
+  ns <- NS(id)
+  bootstrapPage(uiOutput(ns("message")))
+}
+```
+
+-   `NS(id)` is used in Shiny `modules` to create a `namespace` function that helps\
+    generate unique, namespaced IDs for inputs and outputs within the module.
+-   Under `rhino` framework, in the UI, the ID must be wrapped in `ns()`, but in the server the namespace is applied automatically.
+-   Learn more in [Modularizing Shiny app code](https://shiny.posit.co/r/articles/improve/modules/)
+
+------------------------------------------------------------------------
+
+## Exercise 1 - Hello\[Step 4\]
+
+::::: columns
+::: {.column width="25%"}
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=5&amp;sec=0" frameborder="0">
+
+</iframe>
+:::
+
+::: {.column width="75%"}
+-   Try `shiny::runExample ("01_hello")`
+
+-   We will convert a traditional shiny app into a modular Rhino app script
+
+-   Check the traditional shiny app script \[../exercise/01_hello.R\]
+
+-   Complete the modular Rhino app script \[../exercise/01_hello_rhino.R\]
+
+-   Copy the syntax and create your `/app/view/hist.R`
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Why `Rhino`? - Clear Code
+
+**Scalable App Architecture**
+
+-   Modularization with `{box}` package
+-   Shiny modules as building blocks
+-   Logic and view separation
+
+------------------------------------------------------------------------
+
+## Exercise 2 - View \[Step 1\]
+
+::::: columns
+::: {.column width="75%"}
+-   Call the 'hist.R' from your `main.R` with the following syntax
+-   See the app
+
+```{r}
+#| echo: true
+#| eval: false
+
+
+box::use(
+  shiny
+)
+
+box::use(
+  app/view/hist
+)
+
+#' @export
+ui <- function(id) {
+  ns <- shiny$NS(id)
+  
+  shiny$fluidPage(
+    hist$ui(ns('mod1'))
+  )
+  
+}
+
+#' @export
+server <- function(id) {
+  shiny$moduleServer(id, function(input, output, session) {
+    
+    hist$server("mod1")
+    
+  })
+}
+```
+:::
+
+::: {.column width="25%"}
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=5&amp;sec=0" frameborder="0">
+
+</iframe>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Exercise 2 - View \[Step 2\]
+
+::::: columns
+::: {.column width="75%"}
+-   Copy the syntax `/exercise/02_hello_mod.R`
+-   create and update your `/app/view/hello.R`
+-   Call the 'hello.R' from your `main.R`
+-   See the app
+
+```{r}
+#| echo: true
+#| eval: false
+# app/view/hello.R
+
+box::use(
+  shiny,
+)
+
+#' @export
+ui <- function(id) {
+  ns <- shiny$NS(id)
+  shiny$div(
+    shiny$h1("Hello, World!"),
+    
+    ## update the inputID with ns()
+    shiny$textInput(inputId = , 
+                    label = "Your Name",
+                    value = '',
+                    placeholder = NULL),
+    
+    
+    ## update the outputId with ns()
+    shiny$textOutput(outputId = ?)
+  )
+}
+
+#' @export
+server <- function(id) {
+  shiny$moduleServer(id, function(input, output, session) {
+    # inputID & # outputId
+    
+    output$______ <- shiny::renderText({
+      paste('Hello, ', input$_____, "!", sep = '')
+    })
+  })
+}
+
+```
+:::
+
+::: {.column width="25%"}
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=3&amp;sec=0" frameborder="0">
+
+</iframe>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Exercise 3 - Logic and View \[Step1\]
+
+::::: columns
+::: {.column width="75%"}
+Reverse the word! - logic
+
+-   Copy the following syntax and create your `app/logic/reverse.R`
+-   `/exercise/03_reverse_logic.R`
+
+```{r}
+#| echo: true
+#| eval: false
+
+# app/logic/reverse.R
+
+box::use(
+  stringi[stri_reverse]
+)
+
+#' @export
+reverse_words <- function(text) {
+  stringi::stri_reverse(text)
+}
+
+```
+:::
+
+::: {.column width="25%"}
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=3&amp;sec=0" frameborder="0">
+
+</iframe>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Exercise 3 - Logic and View \[Step2\]
+
+::::: columns
+::: {.column width="75%"}
+-   Refer to `/exercise/03_reverse.R` to update your `app/view/hello.R`
+
+    -   call the function at beginning
+
+    ```{r}
+    #| echo: true
+    #| eval: false
+    box::use(
+      app/logic/reverse[reverse_words]
+    )
+
+    ```
+
+    -   Add new output with reversed name in UI
+
+    -   Update the Server
+:::
+
+::: {.column width="25%"}
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=3&amp;sec=0" frameborder="0">
+
+</iframe>
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 2. Quality ✅
+
+-   **Unit Testing** with `{testthat}`
+-   **End-to-End Testing** with Cypress <https://appsilon.github.io/rhino/articles/tutorial/write-end-to-end-tests-with-cypress.html>
+-   **Code Linting** for consistency
+-   **Logging and Monitoring** capabilities
+-   **Type Safety** with `{box}` modules
+
+------------------------------------------------------------------------
+
+## 3. Automation
+
+-   **Project Initialization** - `rhino::init()`
+-   **CI/CD with GitHub Actions** - Built-in workflows
+-   **Dependency Management** with `{renv}`
+-   **Configuration Management** with `{config}`
+
+------------------------------------------------------------------------
+
+## Exercise 5 - AI to help - Map filter!
+
+## Mini App: Map Filter - code
+
+``` r
+
+# Packages -----
+library(shiny)
+library(leaflet)
+library(spData)
+library(dplyr)
+library(sf)
+
+# Prepare Data -----
+data(world)
+mapdata <- world |> mutate(country = name_long)
+
+# UI -----
+ui <- function(id) {
+  shiny::fluidPage(
+    shiny::wellPanel(shiny::actionButton("resetmap", "Reset Map")),
+    leaflet::leafletOutput("mapfilter", height = 400),
+    shiny::tags$h4("Selected countries:"),
+    shiny::verbatimTextOutput("filtered_country")
+  )
+}
+
+# Server -----
+server <- function(input, output, session) {
+    
+    # Define reactive values
+    rv <- shiny::reactiveValues(selected_countries = NULL, # Initialize reactive value for selected counties
+                                last_click_id = NULL,
+                                filtered_data = mapdata) 
+    
+    
+    shiny::observeEvent(input$mapfilter_shape_click, { # this is the logic behind the "click" of the map.
+      
+      click <- input$mapfilter_shape_click
+      rv$last_click_id <- click$id 
+      ########## map behavior ################
+      
+      # If a country is clicked
+      if (click$id %in% rv$selected_countries) {
+        # If selected, remove it
+        rv$selected_countries <- rv$selected_countries[rv$selected_countries != click$id]
+        
+      } else if(click$id == "selected"){ # when a county is clicked again it is removed
+        
+        rv$selected_countries <- rv$selected_countries[rv$selected_countries != tail(rv$selected_countries, n = 1)]
+        
+      }else {
+        # If not selected, add it
+        rv$selected_countries <- c(rv$selected_countries, click$id)
+      }
+      
+      # Now update the leaflet
+      leaflet::leafletProxy("mapfilter", session) |>
+        leaflet::addPolygons(data = mapdata,
+                             layerId = ~country,
+                             label = ~country,
+                             fillColor = ifelse(mapdata$country %in% rv$selected_countries, "#F47A60", "#7fe7dc"), # Change fill color based on selection
+                             col = "#316879",
+                             weight = 2,
+                             fillOpacity = ifelse(mapdata$country %in% rv$selected_countries, 1, 0.5),
+                             highlight = highlightOptions(
+                               fillOpacity = 1,
+                               bringToFront = TRUE)
+        )
+      
+    })
+    
+    output$filtered_country <- shiny::renderPrint({
+      paste(rv$selected_countries, collapse = ',')
+    })
+    
+    # Leaflet
+    output$mapfilter <- leaflet::renderLeaflet({ # rendering the filter map
+      
+      leaflet::leaflet() |> 
+        leaflet::addTiles() |> # The is the base map
+        leaflet::addPolygons(data = mapdata, 
+                             color = '#316879', 
+                             weight = 1,
+                             layerId = ~country,
+                             label = ~country,
+                             fillColor = "#7fe7dc",
+                             fillOpacity = .5,
+                             highlight = highlightOptions(
+                               fillOpacity = 1,
+                               bringToFront = TRUE
+                             )) |>
+        leaflet::setView(zoom = 1, lng = 0, lat =50)
+      
+    })
+    
+    # Reset the map filter
+    shiny::observeEvent(input$resetmap, {
+      
+      rv$selected_countries <- NULL
+      rv$last_click_id <- NULL
+      rv$filtered_data <- mapdata
+      
+      leafletProxy("mapfilter", session) |>
+        leaflet::addPolygons(data = mapdata, 
+                             color = '#316879', 
+                             weight = 1,
+                             layerId = ~country,
+                             label = ~country,
+                             fillColor = "#7fe7dc",
+                             fillOpacity = .5,
+                             highlight = highlightOptions(
+                               fillOpacity = 1,
+                               bringToFront = TRUE
+                             )) |>
+        leaflet::setView(zoom = 1, lng = 0, lat =50)
+      
+    })
+    
+
+    # Return reactive values
+    return(
+      list(
+        value = shiny::reactive(rv$selected_countries),
+        filtered  = shiny::reactive(rv$filtered_data)
+      )
+    )
+   
+}   
+
+
+# Run the app -----
+shinyApp(ui = ui, server = server)
+```
+
+------------------------------------------------------------------------
+
+## Thank you & Questions?

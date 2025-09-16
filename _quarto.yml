@@ -1,0 +1,6 @@
+project:
+  title: "shiny-workshops"
+  type: website
+  output-dir: docs
+editor: visual
+

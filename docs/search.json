@@ -1,0 +1,793 @@
+[
+  {
+    "objectID": "slides/intro-to-rhino.html#introduction-to-building-shiny-apps-with-rhino",
+    "href": "slides/intro-to-rhino.html#introduction-to-building-shiny-apps-with-rhino",
+    "title": "shiny-workshops",
+    "section": "Introduction to building shiny apps with {rhino}",
+    "text": "Introduction to building shiny apps with {rhino}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#welcome",
+    "href": "slides/intro-to-rhino.html#welcome",
+    "title": "shiny-workshops",
+    "section": "Welcome!",
+    "text": "Welcome!\n\n\nMs. Rory Chen\nManager of Dementias Platform Australia (DPAU)\nCentre for Healthy Brain Ageing (CHeBA)\nDiscipline of Psychiatry & Mental Health\nSchool of Clinical Medicine, UNSW Medicine & Health\n\nDPAU: https://www.dementiasplatform.com.au\nLinkedIn: https://www.linkedin.com/in/rorychenxy"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#pre-requisites",
+    "href": "slides/intro-to-rhino.html#pre-requisites",
+    "title": "shiny-workshops",
+    "section": "Pre-requisites",
+    "text": "Pre-requisites\n\nComfortable with simple operations in R and R Studio\nNo prior knowledge of Shiny apps required.\nInstall the {shiny} and {rhino} package if you haven’t already\n\ninstall.packages(\"shiny\") \ninstall.packages(\"rhino\")"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#todays-topic",
+    "href": "slides/intro-to-rhino.html#todays-topic",
+    "title": "shiny-workshops",
+    "section": "Today’s topic",
+    "text": "Today’s topic\n\n\nThe workshop will run for 1 hour (recorded).\n\nWhat is Rhino?\nReal-world R Shiny App Demo to inspire your own\nSlides + Coding Example + Exercise\nAsk questions!\n\n\n\nRhino Stickerfrom Rhino Stickers"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#what-is-rhino",
+    "href": "slides/intro-to-rhino.html#what-is-rhino",
+    "title": "shiny-workshops",
+    "section": "What is Rhino?",
+    "text": "What is Rhino?\n\n\n\n\n🦏Rhino is an Enterprise-grade framework for building Shiny applications\n\nDeveloped by Appsilon https://appsilon.github.io/rhino/\nOpinionated framework with proven industry experience\nModern software engineering practices"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#demo-of-r-shiny-apps",
+    "href": "slides/intro-to-rhino.html#demo-of-r-shiny-apps",
+    "title": "shiny-workshops",
+    "section": "Demo of R Shiny Apps",
+    "text": "Demo of R Shiny Apps\n\nGLADSE"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#what-is-r-shiny",
+    "href": "slides/intro-to-rhino.html#what-is-r-shiny",
+    "title": "shiny-workshops",
+    "section": "What is R Shiny",
+    "text": "What is R Shiny\nShiny is a framework for creating interactive web applications using R code.\n\nUI (User Interface): How your app looks\n\nServer: How your app works\n\nReactivity: User changes input controls → updates output (via server function)"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#start-your-rhino",
+    "href": "slides/intro-to-rhino.html#start-your-rhino",
+    "title": "shiny-workshops",
+    "section": "Start your Rhino",
+    "text": "Start your Rhino\n\nUse rhino::init() to create a new Rhino app in directory."
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#what-is-rhino",
+    "href": "slides/rhino-intro-slides.html#what-is-rhino",
+    "title": "Introduction to {rhino}",
+    "section": "What is {rhino}? 🦏",
+    "text": "What is {rhino}? 🦏\n\nEnterprise-grade framework for building Shiny applications\nDeveloped by Appsilon - a Full Service Certified Posit Partner\nFocuses on software engineering best practices\nEnables building Shiny apps “The Appsilon Way”\nOpinionated framework with proven industry experience\n\n\nStart with energy and explain that rhino is not just another package, but a complete framework that changes how we think about Shiny development."
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#why-rhino-the-problem",
+    "href": "slides/rhino-intro-slides.html#why-rhino-the-problem",
+    "title": "Introduction to {rhino}",
+    "section": "Why {rhino}? The Problem",
+    "text": "Why {rhino}? The Problem\n\n\nTraditional Shiny Challenges: - Monolithic code structure - Difficult to test and maintain - No clear separation of concerns - Manual setup of development tools - Hard to scale for enterprise use\n\nEnterprise Requirements: - Modular architecture - Quality assurance - Team collaboration - Automated workflows - Long-term maintainability"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#rhino-core-philosophy",
+    "href": "slides/rhino-intro-slides.html#rhino-core-philosophy",
+    "title": "Introduction to {rhino}",
+    "section": "{rhino} Core Philosophy",
+    "text": "{rhino} Core Philosophy\n\n\n\n\n\n\nBuild Shiny apps like a fullstack software engineer\n\n\nApply best software engineering practices, modularize your code, test it well, make UI beautiful, and think about user adoption from the very beginning."
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#clear-code",
+    "href": "slides/rhino-intro-slides.html#clear-code",
+    "title": "Introduction to {rhino}",
+    "section": "1. Clear Code 📋",
+    "text": "1. Clear Code 📋\n\nScalable App Architecture - Modularization with {box} package - Shiny modules as building blocks - Logic and view separation\n\n\nOrganized File Structure - app/logic/ - Business logic (Shiny-independent) - app/view/ - UI components and modules - app/main.R - Application entry point"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#quality-assurance",
+    "href": "slides/rhino-intro-slides.html#quality-assurance",
+    "title": "Introduction to {rhino}",
+    "section": "2. Quality Assurance ✅",
+    "text": "2. Quality Assurance ✅\n\nUnit Testing with {testthat}\nEnd-to-End Testing with Cypress\nCode Linting for consistency\nLogging and Monitoring capabilities\nType Safety with {box} modules"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#automation",
+    "href": "slides/rhino-intro-slides.html#automation",
+    "title": "Introduction to {rhino}",
+    "section": "3. Automation 🤖",
+    "text": "3. Automation 🤖\n\nProject Initialization - rhino::init()\nCI/CD with GitHub Actions - Built-in workflows\nDependency Management with {renv}\nConfiguration Management with {config}\nAsset Building - Sass and JavaScript with ES6 support"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#file-organization",
+    "href": "slides/rhino-intro-slides.html#file-organization",
+    "title": "Introduction to {rhino}",
+    "section": "File Organization",
+    "text": "File Organization\nmy_rhino_app/\n├── app/\n│   ├── js/\n│   │   └── index.js\n│   ├── logic/\n│   │   └── __init__.R\n│   ├── static/\n│   │   └── favicon.ico\n│   ├── styles/\n│   │   └── main.scss\n│   ├── view/\n│   │   └── __init__.R\n│   └── main.R\n├── tests/\n├── app.R\n├── dependencies.R\n└── rhino.yml"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#logic-vs-view-separation",
+    "href": "slides/rhino-intro-slides.html#logic-vs-view-separation",
+    "title": "Introduction to {rhino}",
+    "section": "Logic vs View Separation",
+    "text": "Logic vs View Separation\n\n\nLogic (app/logic/)\n# Pure R functions\n# No Shiny dependencies\n# Testable and reusable\n\nbox::use(\n  dplyr[...],\n)\n\n#' @export\nprocess_data &lt;- function(df) {\n  df |&gt;\n    filter(year &gt; 2020) |&gt;\n    summarise(total = sum(value))\n}\n\nView (app/view/)\n# Shiny modules\n# UI and reactive logic\n\nbox::use(\n  shiny[...],\n  app/logic/data[process_data],\n)\n\n#' @export\nui &lt;- function(id) {\n  # Module UI\n}\n\n#' @export  \nserver &lt;- function(id) {\n  # Module server\n}"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#installation",
+    "href": "slides/rhino-intro-slides.html#installation",
+    "title": "Introduction to {rhino}",
+    "section": "Installation",
+    "text": "Installation\n\nStable version:\ninstall.packages(\"rhino\")\n\n\nDevelopment version:\nremotes::install_github(\"Appsilon/rhino\")"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#creating-your-first-app",
+    "href": "slides/rhino-intro-slides.html#creating-your-first-app",
+    "title": "Introduction to {rhino}",
+    "section": "Creating Your First App",
+    "text": "Creating Your First App\n\nMethod 1: R Console\nrhino::init(\"MyRhinoApp\")\nsetwd(\"./MyRhinoApp\")\n\n\nMethod 2: RStudio - File → New Project → New Directory - Select “Rhino Application” - Enter project name\n\n\nRun the app:\nshiny::runApp()"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#key-features-deep-dive",
+    "href": "slides/rhino-intro-slides.html#key-features-deep-dive",
+    "title": "Introduction to {rhino}",
+    "section": "Key Features Deep Dive",
+    "text": "Key Features Deep Dive\n{box} Modules\n\n# Each R file is a module with its own namespace\nbox::use(\n  dplyr,  # Functions available as dplyr$function()\n  shiny[div, moduleServer, NS],  # Import specific functions\n)\n\n#' @export\nmy_function &lt;- function() {\n  # Only exported functions are visible outside\n}\n\n\n\nEncapsulation: Each module has its own namespace\nExplicit imports: No global dependencies\nDirectory structure: Organize modules logically"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#development-workflow",
+    "href": "slides/rhino-intro-slides.html#development-workflow",
+    "title": "Introduction to {rhino}",
+    "section": "Development Workflow",
+    "text": "Development Workflow\nAdding Packages\n# Don't use library() calls!\nrhino::pkg_install(c(\"dplyr\", \"ggplot2\"))\n\nBuilding Assets\n# Build Sass styles\nrhino::build_sass()\n\n# Build JavaScript \nrhino::build_js()\n\n# Watch mode for development\nrhino::build_sass(watch = TRUE)"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#testing-in-rhino",
+    "href": "slides/rhino-intro-slides.html#testing-in-rhino",
+    "title": "Introduction to {rhino}",
+    "section": "Testing in {rhino}",
+    "text": "Testing in {rhino}\nUnit Tests\n# tests/testthat/test-logic.R\ntest_that(\"data processing works\", {\n  result &lt;- process_data(sample_data)\n  expect_equal(nrow(result), 5)\n})\nE2E Tests with Cypress\n// tests/cypress/e2e/app.cy.js\ndescribe('App E2E', () =&gt; {\n  it('should load successfully', () =&gt; {\n    cy.visit('/')\n    cy.contains('Welcome')\n  })\n})"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#rhino-vs-golem",
+    "href": "slides/rhino-intro-slides.html#rhino-vs-golem",
+    "title": "Introduction to {rhino}",
+    "section": "{rhino} vs {golem}",
+    "text": "{rhino} vs {golem}\n\n\n\nFeature\n{rhino}\n{golem}\n\n\n\n\nStructure\nFramework-based\nR package-based\n\n\nModules\n{box} modules\nStandard R package\n\n\nBoilerplate\nMinimal\nMore extensive\n\n\nAssets\nNode.js + Sass\nR-based\n\n\nPhilosophy\nEnterprise focus\nPackage development"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#rhino-vs-vanilla-shiny",
+    "href": "slides/rhino-intro-slides.html#rhino-vs-vanilla-shiny",
+    "title": "Introduction to {rhino}",
+    "section": "{rhino} vs Vanilla Shiny",
+    "text": "{rhino} vs Vanilla Shiny\n\n\n\n\n\n\n\n\nAspect\nVanilla Shiny\n{rhino}\n\n\n\n\nFile Structure\nui.R, server.R\nModular directory structure\n\n\nDependencies\nlibrary() calls\nbox::use() imports\n\n\nStatic Files\nwww/ directory\napp/static/\n\n\nGlobal Scope\nglobal.R\nEncapsulated modules\n\n\nTesting\nManual setup\nBuilt-in framework"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#creating-a-simple-app",
+    "href": "slides/rhino-intro-slides.html#creating-a-simple-app",
+    "title": "Introduction to {rhino}",
+    "section": "Creating a Simple App",
+    "text": "Creating a Simple App\n\nInitialize project\nAdd a chart module\nStyle with Sass\nAdd interactivity with JavaScript\nRun tests\n\n\nWalk through creating a basic rhino app with a simple chart module. Show the file structure, how modules work, and the development workflow."
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#module-design",
+    "href": "slides/rhino-intro-slides.html#module-design",
+    "title": "Introduction to {rhino}",
+    "section": "Module Design",
+    "text": "Module Design\n\nSingle Responsibility: Each module should have one clear purpose\nClear Interfaces: Use @export to define public functions\nMinimal Dependencies: Import only what you need\nLogic First: Write business logic before UI components"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#development-tips",
+    "href": "slides/rhino-intro-slides.html#development-tips",
+    "title": "Introduction to {rhino}",
+    "section": "Development Tips",
+    "text": "Development Tips\n\n\nDO: - Use box::use() for all imports - Separate logic from view - Write tests for logic functions - Use Sass for styling - Leverage CI/CD workflows\n\nDON’T: - Use library() calls - Put everything in one file - Skip testing - Modify app.R - Use global variables"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#react-integration",
+    "href": "slides/rhino-intro-slides.html#react-integration",
+    "title": "Introduction to {rhino}",
+    "section": "React Integration",
+    "text": "React Integration\n\n// app/js/MyComponent.jsx\nexport default function MyComponent({ title, children }) {\n  return (\n    &lt;div className=\"my-component\"&gt;\n      &lt;h2&gt;{title}&lt;/h2&gt;\n      {children}\n    &lt;/div&gt;\n  );\n}\n\n\n# app/view/react.R\nbox::use(rhino[react_component])\n\n#' @export\nMyComponent &lt;- react_component(\"MyComponent\")"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#configuration-management",
+    "href": "slides/rhino-intro-slides.html#configuration-management",
+    "title": "Introduction to {rhino}",
+    "section": "Configuration Management",
+    "text": "Configuration Management\n# rhino.yml\nsass: node\nlegacy_entrypoint: box_top_level\n\n# config/config.yml  \ndefault:\n  database_url: \"localhost:5432\"\n  \nproduction:\n  database_url: !ENV ${DATABASE_URL}\n# In your app\nconfig &lt;- config::get()\ndb_url &lt;- config$database_url"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#when-to-use-rhino",
+    "href": "slides/rhino-intro-slides.html#when-to-use-rhino",
+    "title": "Introduction to {rhino}",
+    "section": "When to Use {rhino}",
+    "text": "When to Use {rhino}\n\nEnterprise applications requiring long-term maintenance\nTeam development with multiple contributors\n\nApplications needing rigorous testing\nProjects requiring advanced UI/UX\nApps with complex business logic\nProduction deployments with compliance requirements"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#success-stories",
+    "href": "slides/rhino-intro-slides.html#success-stories",
+    "title": "Introduction to {rhino}",
+    "section": "Success Stories",
+    "text": "Success Stories\n\n\n\n\n\n\nIndustry Adoption\n\n\n{rhino} is used by Appsilon and their clients for: - Pharmaceutical companies (regulatory compliance) - Financial institutions (risk management) - Government agencies (public dashboards) - Research organizations (data analysis platforms)"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#documentation-learning",
+    "href": "slides/rhino-intro-slides.html#documentation-learning",
+    "title": "Introduction to {rhino}",
+    "section": "Documentation & Learning",
+    "text": "Documentation & Learning\n\nOfficial Documentation: appsilon.github.io/rhino\nTutorial Series: Step-by-step guides\nRhino Showcase: Example applications\nVideo Tutorials: YouTube workshops\nGitHub Repository: Source code and issues"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#community-support",
+    "href": "slides/rhino-intro-slides.html#community-support",
+    "title": "Introduction to {rhino}",
+    "section": "Community & Support",
+    "text": "Community & Support\n\n\nCommunity Resources: - GitHub Discussions - R-bloggers articles - rstudio::conf presentations - Shiny Gatherings\n\nProfessional Support: - Appsilon consulting - Enterprise training - Custom development - Long-term support contracts"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#roadmap-development",
+    "href": "slides/rhino-intro-slides.html#roadmap-development",
+    "title": "Introduction to {rhino}",
+    "section": "Roadmap & Development",
+    "text": "Roadmap & Development\n\nActive development with regular releases\nCommunity feedback integration\nNew features based on enterprise needs\nIntegration with emerging R ecosystem tools\nPerformance improvements and optimizations"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#your-turn",
+    "href": "slides/rhino-intro-slides.html#your-turn",
+    "title": "Introduction to {rhino}",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\nChallenge\n\n\nCreate a simple {rhino} app with: 1. A data processing module in app/logic/ 2. A chart display module in app/view/\n3. Custom styling with Sass 4. Unit tests for your logic functions\nTime: 15 minutes"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#key-takeaways",
+    "href": "slides/rhino-intro-slides.html#key-takeaways",
+    "title": "Introduction to {rhino}",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\n{rhino} transforms how we build Shiny applications\nEnterprise-ready from day one\nEnforces best practices through structure\nScales with your team and requirements\n\nIntegrates modern web development tools\nReduces technical debt and maintenance costs"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#when-to-choose-rhino",
+    "href": "slides/rhino-intro-slides.html#when-to-choose-rhino",
+    "title": "Introduction to {rhino}",
+    "section": "When to Choose {rhino}",
+    "text": "When to Choose {rhino}\n\n✅ Choose {rhino} when: - Building enterprise applications - Working in teams - Need rigorous testing - Require long-term maintenance - Want modern development workflow\n\n\n❌ Maybe not ideal for: - Quick prototypes or proof-of-concepts\n- Solo developers learning Shiny - Simple, single-purpose apps - Projects with very tight deadlines"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#thank-you",
+    "href": "slides/rhino-intro-slides.html#thank-you",
+    "title": "Introduction to {rhino}",
+    "section": "Thank You! 🙏",
+    "text": "Thank You! 🙏\n\n\nQuestions & Discussion\nResources: - Documentation: appsilon.github.io/rhino - GitHub: github.com/Appsilon/rhino - Appsilon: appsilon.com\nContact: - Email: opensource@appsilon.com\n\n\n\n\n{rhino} Logo\n\n\nBuild enterprise Shiny apps at speed 🚀"
+  },
+  {
+    "objectID": "slides/rhino-intro-slides.html#appendix-additional-resources",
+    "href": "slides/rhino-intro-slides.html#appendix-additional-resources",
+    "title": "Introduction to {rhino}",
+    "section": "Appendix: Additional Resources",
+    "text": "Appendix: Additional Resources\nCode Examples\n\nRhino Showcase App\nWorkshop Repository\nMigration Examples\n\nAdvanced Topics\n\nCustom linting rules with {box.linters}\nDocker deployment strategies\n\nPerformance optimization techniques\nAdvanced testing patterns\n\n\nBackup slides for potential questions about specific implementation details"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#what-is-shiny",
+    "href": "slides/intro-to-rhino.html#what-is-shiny",
+    "title": "shiny-workshops",
+    "section": "What is Shiny?",
+    "text": "What is Shiny?\n\n\n\n\n✨Shiny is a framework for creating interactive web applications using R code.\n\nUI (User Interface): How your app looks\n\nServer: How your app works\n\nReactivity: User changes input controls → updates output (via server function)\nhttps://rorychenxy.github.io/shiny-workshops/slides/intro-to-shiny.html"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#why-rhino",
+    "href": "slides/intro-to-rhino.html#why-rhino",
+    "title": "shiny-workshops",
+    "section": "Why Rhino?",
+    "text": "Why Rhino?\n\n\n\nClear Code (modules, file structures)\nQuality Check\nAutomation\nWe will see details later 😎.\n\n\n\nWhy Why Why GIFfrom Why Why GIFs"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#clear-code",
+    "href": "slides/intro-to-rhino.html#clear-code",
+    "title": "shiny-workshops",
+    "section": "1. Clear Code 📋",
+    "text": "1. Clear Code 📋\n\nScalable App Architecture\n\nModularization with {box} package\nShiny modules as building blocks\nLogic and view separation\n\n\n\nOrganized File Structure\n\napp/logic/ - Business logic (Shiny-independent)\napp/view/ - UI components and modules\napp/static/ - UI components and modules\napp/styles/ - UI components and modules\napp/main.R - Application entry point"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#quality",
+    "href": "slides/intro-to-rhino.html#quality",
+    "title": "shiny-workshops",
+    "section": "2. Quality ✅",
+    "text": "2. Quality ✅\n\nUnit Testing with {testthat}\nEnd-to-End Testing with Cypress https://appsilon.github.io/rhino/articles/tutorial/write-end-to-end-tests-with-cypress.html\nCode Linting for consistency\nLogging and Monitoring capabilities\nType Safety with {box} modules"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#automation",
+    "href": "slides/intro-to-rhino.html#automation",
+    "title": "shiny-workshops",
+    "section": "3. Automation",
+    "text": "3. Automation\n\nProject Initialization - rhino::init()\nCI/CD with GitHub Actions - Built-in workflows\nDependency Management with {renv}\nConfiguration Management with {config}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#introduction-to-building-shiny-apps-with-rhino",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#introduction-to-building-shiny-apps-with-rhino",
+    "title": "shiny-workshops",
+    "section": "Introduction to building shiny apps with {rhino}",
+    "text": "Introduction to building shiny apps with {rhino}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#welcome",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#welcome",
+    "title": "shiny-workshops",
+    "section": "Welcome!",
+    "text": "Welcome!\n\n\nMs. Rory Chen\nManager of Dementias Platform Australia (DPAU)\nCentre for Healthy Brain Ageing (CHeBA)\nDiscipline of Psychiatry & Mental Health\nSchool of Clinical Medicine, UNSW Medicine & Health LinkedIn: https://www.linkedin.com/in/rorychenxy/"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#pre-requisites",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#pre-requisites",
+    "title": "shiny-workshops",
+    "section": "Pre-requisites",
+    "text": "Pre-requisites\n\nComfortable with simple operations in R and R Studio\nNo prior knowledge of Shiny apps required.\nInstall the {shiny} and {rhino} package if you haven’t already\n\ninstall.packages(\"shiny\") \ninstall.packages(\"rhino\")"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#todays-topic",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#todays-topic",
+    "title": "shiny-workshops",
+    "section": "Today’s topic",
+    "text": "Today’s topic\nThe workshop will run for 1 hour.\n\nWhat is Rhino\nReal-world R Shiny App Demo to inspire your own\nSlides + Coding Example + Exercise\nAsk questions!"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#what-is-shiny",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#what-is-shiny",
+    "title": "shiny-workshops",
+    "section": "What is shiny?",
+    "text": "What is shiny?\n\n\n\n\n✨**shiny** is a framework for creating interactive web applications using R code.\n\nUI (User Interface): How your app looks\n\nServer: How your app works\n\nReactivity: User changes input controls → updates output (via server function)"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#what-is-rhino",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#what-is-rhino",
+    "title": "shiny-workshops",
+    "section": "What is Rhino?",
+    "text": "What is Rhino?\n\n\n\n\n🦏**Rhino** is an Enterprise-grade framework for building Shiny applications\n\nDeveloped by Appsilon https://appsilon.github.io/rhino/\nOpinionated framework with proven industry experience\nModern software engineering practices"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#why-rhino",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#why-rhino",
+    "title": "shiny-workshops",
+    "section": "Why Rhino?",
+    "text": "Why Rhino?\n\n\nClear Code (modules, file structures)\n\n\nQuality Check\n\n\nAutomation"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#clear-code",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#clear-code",
+    "title": "shiny-workshops",
+    "section": "1. Clear Code 📋",
+    "text": "1. Clear Code 📋\n\nScalable App Architecture\n\nModularization with {box} package\nShiny modules as building blocks\nLogic and view separation\n\n\n\nOrganized File Structure\n\napp/logic/ - Business logic (Shiny-independent)\napp/view/ - UI components and modules\napp/static/ - UI components and modules\napp/styles/ - UI components and modules\napp/main.R - Application entry point"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#quality",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#quality",
+    "title": "shiny-workshops",
+    "section": "2. Quality ✅",
+    "text": "2. Quality ✅\n\nUnit Testing with {testthat}\nEnd-to-End Testing with Cypress https://appsilon.github.io/rhino/articles/tutorial/write-end-to-end-tests-with-cypress.html\nCode Linting for consistency\nLogging and Monitoring capabilities\nType Safety with {box} modules"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#automation",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#automation",
+    "title": "shiny-workshops",
+    "section": "3. Automation",
+    "text": "3. Automation\n\nProject Initialization - rhino::init()\nCI/CD with GitHub Actions - Built-in workflows\nDependency Management with {renv}\nConfiguration Management with {config}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#demo-of-r-shiny-apps",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#demo-of-r-shiny-apps",
+    "title": "shiny-workshops",
+    "section": "Demo of R Shiny Apps",
+    "text": "Demo of R Shiny Apps\n\nGLADSE"
+  },
+  {
+    "objectID": "slides/intro-to-rhino-L-FPVHYB4.html#start-your-rhino",
+    "href": "slides/intro-to-rhino-L-FPVHYB4.html#start-your-rhino",
+    "title": "shiny-workshops",
+    "section": "Start your Rhino",
+    "text": "Start your Rhino\n\nUse rhino::init() to create a new Rhino app in directory."
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#real-world-r-shiny-app-demo",
+    "href": "slides/intro-to-rhino.html#real-world-r-shiny-app-demo",
+    "title": "shiny-workshops",
+    "section": "Real-world R Shiny App Demo",
+    "text": "Real-world R Shiny App Demo\n\n\nAccelerate the progress in dementia research\nTransform the epidemiology of ageing and dementia\nGlobal Ageing and Dementia Study Explorer (GLADSE) https://portal.dementiasplatform.com.au/crs-metadata-explorer"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#dementias-platform-australia-dpau",
+    "href": "slides/intro-to-rhino.html#dementias-platform-australia-dpau",
+    "title": "shiny-workshops",
+    "section": "Dementias Platform Australia (DPAU)",
+    "text": "Dementias Platform Australia (DPAU)\n\n\n\nLed: UNSW Sydney’s Centre for Healthy Brain Ageing (CHeBA)\nPartnership:\n\nDementias Platform UK (DPUK)\nAlzheimers Diseases Data Initiative (AD Data Initiative)\n\nFunding support:\n\nNational Institute of Health (NIH)\nAustralian Research Data Commons (ARDC)"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#gladse-file-structure",
+    "href": "slides/intro-to-rhino.html#gladse-file-structure",
+    "title": "shiny-workshops",
+    "section": "GLADSE File Structure",
+    "text": "GLADSE File Structure\n\nfs::dir_tree(\"./github/gladse\", recurse = 2)\n\n   \n\n\n~/gladse\n├── app\n│   ├── data\n│   │   ├── crsdir_df.fst\n│   │   ├── crslist.fst\n│   │   ├── csurvone_df.fst\n│   │   ├── csurv_filter.fst\n│   │   ├── csurv_matrix.fst\n│   │   ├── filter_df.fst\n│   │   ├── map_filter.rda\n│   │   ├── measurement_inv.fst\n│   │   ├── meta_filter.fst\n│   │   ├── repolist.fst\n│   │   └── varinfo.fst\n│   ├── js\n│   │   └── index.js\n│   ├── logic\n│   │   ├── footer.R\n│   │   ├── value_map.R\n│   │   ├── vlabel.R\n│   │   └── __init__.R\n│   ├── main.R\n│   ├── static\n│   │   ├── favicon.ico\n│   │   └── images\n│   ├── styles\n│   │   └── main.scss\n│   └── view\n│       ├── connect_map.R\n│       ├── crs_directory.R\n│       ├── crs_filters.R\n│       ├── csurv_matrix.R\n│       ├── dt_table.R\n│       ├── map_filter.R\n│       ├── repo.R\n│       ├── stmt.R\n│       └── __init__.R\n├── app.R\n├── config.yml\n├── dependencies.R\n├── gladse.Rproj\n├── renv\n│   ├── activate.R\n│   ├── library\n│   │   └── windows\n│   ├── settings.json\n│   └── staging\n├── renv.lock\n├── rhino.yml\n├── rsconnect\n│   └── shinyapps.io\n│       ├── dpau\n└── tests\n    ├── cypress\n    │   └── e2e\n    ├── cypress.config.js\n    └── testthat\n        └── test-main.R\n\nClear Code - Organized File Structure\n\napp/main.R - Application entry point\napp/logic/ - Business logic (Shiny-independent)\napp/view/ - UI components and modules\napp/static/ - static like pics\napp/styles/ - CSS files"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#real-world-r-shiny-app-demo---gladse",
+    "href": "slides/intro-to-rhino.html#real-world-r-shiny-app-demo---gladse",
+    "title": "shiny-workshops",
+    "section": "Real-world R Shiny App Demo - GLADSE",
+    "text": "Real-world R Shiny App Demo - GLADSE\n\n\nAccelerate the progress in dementia research\nTransform the epidemiology of ageing and dementia\nGlobal Ageing and Dementia Study Explorer (GLADSE) https://portal.dementiasplatform.com.au/crs-metadata-explorer"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#task-1-initiate",
+    "href": "slides/intro-to-rhino.html#task-1-initiate",
+    "title": "shiny-workshops",
+    "section": "Task 1 – initiate",
+    "text": "Task 1 – initiate\nStart your Rhino with either\n\nrhino::init(\"my-first-rhino-app\") \n\nOr Create New Project feature with R studio:"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#task-1---initiate",
+    "href": "slides/intro-to-rhino.html#task-1---initiate",
+    "title": "shiny-workshops",
+    "section": "Task 1 - initiate",
+    "text": "Task 1 - initiate\nStep 1\nCreate a new Rhino app in desired directory.\nStep 2\n\nEnable automatic reloading with shiny::devmode().\nRun the app with shiny::runApp().\nEdit the displayed message in app/main.R and see how the app automatically reloads."
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#why-rhino-1",
+    "href": "slides/intro-to-rhino.html#why-rhino-1",
+    "title": "shiny-workshops",
+    "section": "Why Rhino",
+    "text": "Why Rhino\n\nScalable App Architecture\n\nModularization with {box} package\nShiny modules as building blocks\nLogic and view separation"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-1-initiate",
+    "href": "slides/intro-to-rhino.html#exercise-1-initiate",
+    "title": "shiny-workshops",
+    "section": "Exercise 1 – initiate",
+    "text": "Exercise 1 – initiate\nStart your Rhino with either\n\nrhino::init(\"my-first-rhino-app\") \n\nOr Create New Project feature with R studio:"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-1---hello-world",
+    "href": "slides/intro-to-rhino.html#exercise-1---hello-world",
+    "title": "shiny-workshops",
+    "section": "Exercise 1 - Hello, World!",
+    "text": "Exercise 1 - Hello, World!\nStep 1\nCreate a new Rhino app in desired directory.\nStep 2\n\nEnable automatic reloading with shiny::devmode().\nRun the app with shiny::runApp()."
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#step-3-exercise-1---hello-world",
+    "href": "slides/intro-to-rhino.html#step-3-exercise-1---hello-world",
+    "title": "shiny-workshops",
+    "section": "[Step 3] Exercise 1 - Hello, World!",
+    "text": "[Step 3] Exercise 1 - Hello, World!\n\nEdit the displayed message in app/main.R and see how the app automatically reloads.\n\n\nbox::use(\n  shiny[bootstrapPage, div, moduleServer, NS, renderUI, tags, uiOutput],\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- NS(id)\n  bootstrapPage(\n    uiOutput(ns(\"message\"))\n  )\n}\n\n#' @export\nserver &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$message &lt;- renderUI({\n      div(\n        style = \"display: flex; justify-content: center; align-items: center; height: 100vh;\",\n        tags$h1(\n#          tags$a(\"Check out Rhino docs!\", href = \"https://appsilon.github.io/rhino/\")\n           tags$a(\"Hello, World!\")\n        )\n      )\n    })\n  })\n}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#step-3.1-what-is-ns---nsid",
+    "href": "slides/intro-to-rhino.html#step-3.1-what-is-ns---nsid",
+    "title": "shiny-workshops",
+    "section": "[Step 3.1] What is ns <- NS(id)",
+    "text": "[Step 3.1] What is ns &lt;- NS(id)\n\nNS(id) is used in Shiny Modules to create a namespace function that helps\ngenerate unique, namespaced IDs for inputs and outputs within the module.\nUnder rhino framework, every input/output ID needs to be wrapped with ns(‘ID_created’)"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#step-4-exercise-1---hello-name",
+    "href": "slides/intro-to-rhino.html#step-4-exercise-1---hello-name",
+    "title": "shiny-workshops",
+    "section": "[Step 4] Exercise 1 - Hello, Name!",
+    "text": "[Step 4] Exercise 1 - Hello, Name!\n\nCopy the following code to app/main.R and see what happens.\n\n\nbox::use(\n  shiny,\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- NS(id)\n  shiny::textInput(inputId = ns('yname'),\n                   label = 'Your Name',\n                   value = '',\n                   placeholder = NULL)\n  shiny::verbatimTextOutput(ns(\"hellotext\"))\n}\n\n#' @export\nserver &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$hellotext &lt;- shiny::renderText({\n        paste('Hello, ', input$yname, \"!\", sep = '')\n    })\n  })\n}"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#introduction-to-shiny",
+    "href": "slides/intro-to-shiny.html#introduction-to-shiny",
+    "title": "shiny-workshops",
+    "section": "Introduction to Shiny",
+    "text": "Introduction to Shiny"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#welcome",
+    "href": "slides/intro-to-shiny.html#welcome",
+    "title": "shiny-workshops",
+    "section": "Welcome!",
+    "text": "Welcome!\n\n\n\n\nDr. Mark Hanly\nSenior Lecturer, Statistician\nCentre for Big Data Research in Health (CBDRH)\nUNSW Medicine & Health\nMs. Rory Chen\nManager of Dementias Platform Australia (DPAU)\nCentre for Healthy Brain Ageing (CHeBA)\nDiscipline of Psychiatry & Mental Health\nSchool of Clinical Medicine, UNSW Medicine & Health"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#pre-requisites",
+    "href": "slides/intro-to-shiny.html#pre-requisites",
+    "title": "shiny-workshops",
+    "section": "Pre-requisites",
+    "text": "Pre-requisites\n\nComfortable with simple operations in R and R Studio\nNo prior knowledge of Shiny apps required.\nInstall the {shiny} package if you haven’t already\n\ninstall.packages(\"shiny\")"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#todays-topic",
+    "href": "slides/intro-to-shiny.html#todays-topic",
+    "title": "shiny-workshops",
+    "section": "Today’s topic",
+    "text": "Today’s topic\nThe workshop will run for 1 hour.\n\nWhat is R Shiny - basic\nReal-world R Shiny App Demo to inspire your own\nSlides + Coding Example + Exercise\nAsk questions!"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#what-is-r-shiny",
+    "href": "slides/intro-to-shiny.html#what-is-r-shiny",
+    "title": "shiny-workshops",
+    "section": "What is R Shiny",
+    "text": "What is R Shiny\nShiny is a framework for creating interactive web applications using R code.\n\nUI (User Interface): How your app looks\n\nServer: How your app works\n\nReactivity: User changes input controls → updates output (via server function)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#why-use-r-shiny",
+    "href": "slides/intro-to-shiny.html#why-use-r-shiny",
+    "title": "shiny-workshops",
+    "section": "Why use R Shiny",
+    "text": "Why use R Shiny\n\nR users can build web applications without HTML/CSS/JS knowledge\nAccessible and shareable via browser\nGreat for interactive data visualization and analysis\nUseful for presentations, websites, and collaboration\nApps as teaching aids …"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#demo-of-r-shiny-apps",
+    "href": "slides/intro-to-shiny.html#demo-of-r-shiny-apps",
+    "title": "shiny-workshops",
+    "section": "Demo of R Shiny Apps",
+    "text": "Demo of R Shiny Apps\n\ncbdrh.shinyapps.io/queueSim; Code\ncbdrh.shinyapps.io/daggle; Code\nrorychenxy.shinyapps.io/gladse"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#structure-of-a-shiny-app",
+    "href": "slides/intro-to-shiny.html#structure-of-a-shiny-app",
+    "title": "shiny-workshops",
+    "section": "Structure of a Shiny App",
+    "text": "Structure of a Shiny App\n\n\nSingle-file\n~/appdir\n|-- app.R\n\nTwo-file\n~/appdir\n|-- ui.R\n|-- server.R\n|-- *global.R\n\nModules/as a pkg\n../app-pkg\n|-- DESCRIPTION\n|-- inst\n|   `-- app\n|       |-- server.R\n|       `-- ui.R\n|-- man\n|   `-- startApplication.Rd\n|-- NAMESPACE\n`-- R\n    |-- clusterPlot.R\n    `-- startApplication.R"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#ui-server",
+    "href": "slides/intro-to-shiny.html#ui-server",
+    "title": "shiny-workshops",
+    "section": "UI & Server",
+    "text": "UI & Server\n\n\nUI\n\nDefines the layout and appearance.\nContains elements such as:\n\nlayout structures (sidebars)\ninputs (text boxes, sliders, buttons)\noutputs (plots, tables)\n\n\n\nServer\n\nPerforms calculations.\nContains the logic to respond to user inputs, and update outputs.\nCommunicates with the UI to dynamically render outputs."
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#exercise-1---hello-world",
+    "href": "slides/intro-to-shiny.html#exercise-1---hello-world",
+    "title": "shiny-workshops",
+    "section": "Exercise 1 - Hello, World!",
+    "text": "Exercise 1 - Hello, World!\n\n\n\n\n\n\nOpen up your R Studio.\nMake sure you have the {shiny} package installed.\nCreate an app.R file.\nload shiny with library(shiny)\nAdd ui and server elements,\nas well as shinyApp(ui = ui, server = server).\nClick Run - Check it works.\n\nlibrary(shiny)\n# UI -----\nui &lt;- fluidPage(\n  h1(\"Hello, World!\")\n)\n\n# Server -----\nserver &lt;- function(input, output, session) {\n}\n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#exercise-2---hello-name",
+    "href": "slides/intro-to-shiny.html#exercise-2---hello-name",
+    "title": "shiny-workshops",
+    "section": "Exercise 2 - Hello, Name!",
+    "text": "Exercise 2 - Hello, Name!\n\n\n\nInside the fluidPage function:\n\nadd textInput\nadd textOutput\n\nDefine the output in server function\n\n\n\n\n\nlibrary(shiny)\n\n# UI -----\nui &lt;- fluidPage(\n  h1(\"Hello, World!\"),\n  # Add input\n  textInput(inputId = 'yname',\n            label = 'Your Name',\n            value = '',\n            placeholder = NULL),\n  # Add output\n  textOutput('greeting')\n)\n\n# Server -----\nserver &lt;- function(input, output, session) {\n  # Define the output\n  output$greeting &lt;- renderText({\n    paste('Hello, ', input$yname, \"!\", sep = '')\n  }) \n}  \n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#exercise-3---hello-name-confirm",
+    "href": "slides/intro-to-shiny.html#exercise-3---hello-name-confirm",
+    "title": "shiny-workshops",
+    "section": "Exercise 3 - Hello, Name! + Confirm",
+    "text": "Exercise 3 - Hello, Name! + Confirm\n\n\n\nInside the fluidPage function:\n\nadd Action Button\nadd Reactive output\n\nDefine the reactive output\n\n\n\n\n\nlibrary(shiny)\n\n# UI -----\nui &lt;- fluidPage(\n  h1(\"Hello, World!\"),\n  textInput(inputId = 'yname',label = 'Your Name',value = '',placeholder = NULL),\n  textOutput('greeting'),\n  br(),\n  fluidRow(\n    # action button\n    column(width = 3, actionButton(inputId = 'confirm',label = \"Confirm\")),\n    #reactive output\n    column(width = 8, verbatimTextOutput('greetingv'))\n  )\n)\n\n# Server -----\nserver &lt;- function(input, output, session) {\n  # Define the output\n  output$greetingv &lt;- renderText({\n    paste('Hello, ', input$yname, \"!\", sep = '')}) |&gt;\n  bindEvent(input$confirm) # this means when the action button is clicked\n    \n  output$greeting &lt;- renderText({\n    paste('Hello, ', input$yname, \"!\", sep = '')\n  }) \n  \n\n}\n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#exercise-3---hello-name-confirm---demo",
+    "href": "slides/intro-to-shiny.html#exercise-3---hello-name-confirm---demo",
+    "title": "shiny-workshops",
+    "section": "Exercise 3 - Hello, Name! + Confirm - Demo",
+    "text": "Exercise 3 - Hello, Name! + Confirm - Demo\n#| standalone: true\n#| viewerHeight: 600\nlibrary(shiny)\n\n# UI -----\nui &lt;- fluidPage(\n  h1(\"Hello, World!\"),\n  textInput(inputId = 'yname',\n            label = 'Your Name',\n            value = '',\n            placeholder = NULL),\n  textOutput('greeting'),\n  br(),\n  fluidRow(\n    # action button\n    column(width = 3, actionButton(inputId = 'confirm',label = \"Confirm\")),\n    # reactive output\n    column(width = 8, verbatimTextOutput('greetingv'))\n  )\n)\n# Server -----\nserver &lt;- function(input, output, session) {\n  # Define the output\n  output$greeting &lt;- renderText({\n    paste('Hello, ', input$yname, \"!\", sep = '')\n  }) \n  \n  output$greetingv &lt;- renderText({\n    paste('Hello, ', input$yname, \"!\", sep = '')}) |&gt;\n    bindEvent(input$confirm) # this means when the action button is clicked\n}  \n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#shiny-ui-components",
+    "href": "slides/intro-to-shiny.html#shiny-ui-components",
+    "title": "shiny-workshops",
+    "section": "Shiny UI Components",
+    "text": "Shiny UI Components\n\n\nInputs\n\nAction Buttons\n\nCheckbox\n\nDate\n\nText\n\nNumeric\n\nSlider\n…\n\n\nOutputs\n\nText\n\nTables\n\nPlots\n\nImages\n…\n\n\nDisplay Messages\n\nTooltips\n\nNotifications\n\nPopovers\n\nProgress Bar\n\nModal\n…"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#basic-shiny-inputs---demo",
+    "href": "slides/intro-to-shiny.html#basic-shiny-inputs---demo",
+    "title": "shiny-workshops",
+    "section": "Basic Shiny Inputs - demo",
+    "text": "Basic Shiny Inputs - demo\n#| standalone: true\n#| viewerHeight: 600\n# Packages -----\nlibrary(shiny)\nlibrary(bslib)\n\n# UI -----\nui &lt;- page_fluid(\n  titlePanel(\"Shiny Basic Input Widgets\"),\n  layout_column_wrap(\n    card(\n      card_header(\"Buttons\"),\n      actionButton(\"action\", \"Action\"),\n      submitButton(\"Submit\")\n    ),\n   card(\n      card_header(\"File input\"),\n      fileInput(\"file\", label = NULL)\n    ),\n    card(\n      card_header(\"Single checkbox\"),\n      checkboxInput(\"checkbox\", \"Choice A\", value = TRUE)\n    ),\n    card(\n      card_header(\"Checkbox group\"),\n      checkboxGroupInput(\n        \"checkGroup\",\n        \"Select all that apply\",\n        choices = list(\"Choice 1\" = 1, \"Choice 2\" = 2, \"Choice 3\" = 3),\n        selected = 1\n      )\n    ),\n    card(\n      card_header(\"Date input\"),\n      dateInput(\"date\", \"Select date\", value = \"2025-01-01\")\n    ),\n    card(\n      card_header(\"Date range input\"),\n      dateRangeInput(\"dates\", \"Select dates\")\n    ),\n    card(\n      card_header(\"Numeric input\"),\n      numericInput(\"num\", \"Input number\", value = 1)\n    ),\n    card(\n      card_header(\"Sliders\"),\n      sliderInput(\n        \"slider1\",\n        \"Set value\",\n        min = 0,\n        max = 100,\n        value = 50\n      ),\n      sliderInput(\n        \"slider2\",\n        \"Set value range\",\n        min = 0,\n        max = 100,\n        value = c(25, 75)\n      )\n    ),\n    card(\n      card_header(\"Help text\"),\n      helpText(\n        \"Note: help text isn't a true widget,\",\n        \"but it provides an easy way to add text to\",\n        \"accompany other widgets.\"\n      )\n    ),\n\n    card(\n      card_header(\"Radio buttons\"),\n      radioButtons(\n        \"radio\",\n        \"Select option\",\n        choices = list(\"Choice 1\" = 1, \"Choice 2\" = 2, \"Choice 3\" = 3),\n        selected = 1\n      )\n    ),\n    card(\n      card_header(\"Select box\"),\n      selectInput(\n        \"select\",\n        \"Select option\",\n        choices = list(\"Choice 1\" = 1, \"Choice 2\" = 2, \"Choice 3\" = 3),\n        selected = 1\n      )\n    ),\n\n    card(\n      card_header(\"Text input\"),\n      textInput(\"text\", label = NULL, value = \"Enter text...\"),\n      textAreaInput(\"textarea\", label = \"Text Area\", rows = 3, value = \"Enter text...\")\n    )\n  )\n)\n\n# Define server logic ----\nserver &lt;- function(input, output) {\n  \n}\n\n# Run the app ----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#cool-shiny-inputs",
+    "href": "slides/intro-to-shiny.html#cool-shiny-inputs",
+    "title": "shiny-workshops",
+    "section": "Cool Shiny Inputs",
+    "text": "Cool Shiny Inputs\ninstall.packages('shinyWidgets')\nshinyWidgets::shinyWidgetsGallery()"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#basic-shiny-layout",
+    "href": "slides/intro-to-shiny.html#basic-shiny-layout",
+    "title": "shiny-workshops",
+    "section": "Basic Shiny Layout",
+    "text": "Basic Shiny Layout\nlibrary(shinydashboard)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#mini-app-qr-codes-generator---code",
+    "href": "slides/intro-to-shiny.html#mini-app-qr-codes-generator---code",
+    "title": "shiny-workshops",
+    "section": "Mini App: QR Codes Generator - code",
+    "text": "Mini App: QR Codes Generator - code\nlibrary(shiny)\nlibrary(qrcode)\n\nui &lt;- fluidPage(\n  sidebarLayout(\n    sidebarPanel(\n      textInput(\"link\", \"Enter Link here\", \"www.google.com\"),\n      downloadButton(\"save\", \"Download QR\")\n    ),\n    mainPanel(\n      plotOutput(\"tplot\" ) \n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  tplot &lt;- reactive({\n    qr &lt;- qr_code(input$link)\n    plot(qr)\n    \n  })\n  output$tplot &lt;- renderPlot({\n    tplot()\n  })\n  \n  # downloadHandler contains 2 arguments as functions, namely filename, content\n  output$save &lt;- downloadHandler(\n    filename =  function() {\n      paste(\"myplot.pdf\")\n    },\n    # content is a function with argument file. content writes the plot to the device\n    content = function(file) {\n      pdf(file) # open the pdf device\n      plot(qr_code(input$link)) # draw the plot\n      dev.off()  # turn the device off\n    } \n  )\n}\n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#mini-app-qr-codes-generator---demo",
+    "href": "slides/intro-to-shiny.html#mini-app-qr-codes-generator---demo",
+    "title": "shiny-workshops",
+    "section": "Mini App: QR Codes Generator - demo",
+    "text": "Mini App: QR Codes Generator - demo\n#| standalone: true\n#| viewerHeight: 600\nlibrary(shiny)\nlibrary(qrcode)\n\nui &lt;- fluidPage(\n  sidebarLayout(\n    sidebarPanel(\n      wellPanel(\n        h3(\"R Shiny at UNSW\"),\n        fluidRow(\n        \"Are you using R Shiny or thinking about it?\n         We’re conducting a short survey to better understand if and how UNSW researchers use R Shiny. \")),\n      br(),\n      textInput(\"link\", \"Enter Link here\", \"https://forms.office.com/Pages/ResponsePage.aspx?id=pM_2PxXn20i44Qhnufn7o--kDxHVBa1CuZzopnfzpj9UQ0JFQ1RPRUUyUFUwM09PRU5TRDNJSjlDVSQlQCN0PWcu&utm_source=Unknown+List&utm_campaign=b3d3640e12-EMAIL_CAMPAIGN_2023_01_12_04_27_COPY_01&utm_medium=email&utm_term=0_-0056c8e67b-&mc_cid=b3d3640e12&mc_eid=UNIQID\"),\n      downloadButton(\"save\", \"Download QR\")),\n    mainPanel(\n      plotOutput(\"tplot\" ) \n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  tplot &lt;- reactive({\n    qr &lt;- qr_code(input$link)\n    plot(qr)\n  })\n  output$tplot &lt;- renderPlot({\n    tplot()\n  })\n  \n  # downloadHandler contains 2 arguments as functions, namely filename, content\n  output$save &lt;- downloadHandler(\n    filename =  function() {\n      paste(\"myplot.pdf\")\n    },\n    # content is a function with argument file. content writes the plot to the device\n    content = function(file) {\n      pdf(file) # open the pdf device\n      plot(qr_code(input$link)) # draw the plot\n      dev.off()  # turn the device off\n    } \n  )\n}\n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#mini-app-shiny-app-to-explore-data---code",
+    "href": "slides/intro-to-shiny.html#mini-app-shiny-app-to-explore-data---code",
+    "title": "shiny-workshops",
+    "section": "Mini App: Shiny App to Explore Data - code",
+    "text": "Mini App: Shiny App to Explore Data - code\n# Packages -----\nlibrary(shiny)\nlibrary(ggplot2)\nlibrary(GWalkR)\n\ndata(iris)\n\n# UI -----\nui &lt;- fluidPage(\n  titlePanel(\"Explore data with GwalkR\"),\n  gwalkrOutput(\"mygraph\")\n)\n\n# Server -----\nserver &lt;- function(input, output, session) {\n  output$mygraph &lt;- renderGwalkr(\n    gwalkr(iris)\n  )\n}\n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#mini-app-map-filter---demo",
+    "href": "slides/intro-to-shiny.html#mini-app-map-filter---demo",
+    "title": "shiny-workshops",
+    "section": "Mini App: Map Filter - demo",
+    "text": "Mini App: Map Filter - demo\n#| standalone: true\n#| viewerHeight: 600\n# Packages -----\nlibrary(shiny)\nlibrary(leaflet)\nlibrary(spData)\nlibrary(dplyr)\nlibrary(sf)\n\n# Prepare Data -----\ndata(world)\nmapdata &lt;- world |&gt; mutate(country = name_long)\n\n# UI -----\nui &lt;- function(id) {\n  shiny::fluidPage(\n    shiny::wellPanel(shiny::actionButton(\"resetmap\", \"Reset Map\")),\n    leaflet::leafletOutput(\"mapfilter\", height = 400),\n    shiny::tags$h4(\"Selected countries:\"),\n    shiny::verbatimTextOutput(\"filtered_country\")\n  )\n}\n\n# Server -----\nserver &lt;- function(input, output, session) {\n    \n    # Define reactive values\n    rv &lt;- shiny::reactiveValues(selected_countries = NULL, # Initialize reactive value for selected counties\n                                last_click_id = NULL,\n                                filtered_data = mapdata) \n    \n    \n    shiny::observeEvent(input$mapfilter_shape_click, { # this is the logic behind the \"click\" of the map.\n      \n      click &lt;- input$mapfilter_shape_click\n      rv$last_click_id &lt;- click$id \n      ########## map behavior ################\n      \n      # If a country is clicked\n      if (click$id %in% rv$selected_countries) {\n        # If selected, remove it\n        rv$selected_countries &lt;- rv$selected_countries[rv$selected_countries != click$id]\n        \n      } else if(click$id == \"selected\"){ # when a county is clicked again it is removed\n        \n        rv$selected_countries &lt;- rv$selected_countries[rv$selected_countries != tail(rv$selected_countries, n = 1)]\n        \n      }else {\n        # If not selected, add it\n        rv$selected_countries &lt;- c(rv$selected_countries, click$id)\n      }\n      \n      # Now update the leaflet\n      leaflet::leafletProxy(\"mapfilter\", session) |&gt;\n        leaflet::addPolygons(data = mapdata,\n                             layerId = ~country,\n                             label = ~country,\n                             fillColor = ifelse(mapdata$country %in% rv$selected_countries, \"#F47A60\", \"#7fe7dc\"), # Change fill color based on selection\n                             col = \"#316879\",\n                             weight = 2,\n                             fillOpacity = ifelse(mapdata$country %in% rv$selected_countries, 1, 0.5),\n                             highlight = highlightOptions(\n                               fillOpacity = 1,\n                               bringToFront = TRUE)\n        )\n      \n    })\n    \n    output$filtered_country &lt;- shiny::renderPrint({\n      paste(rv$selected_countries, collapse = ',')\n    })\n    \n    # Leaflet\n    output$mapfilter &lt;- leaflet::renderLeaflet({ # rendering the filter map\n      \n      leaflet::leaflet() |&gt; \n        leaflet::addTiles() |&gt; # The is the base map\n        leaflet::addPolygons(data = mapdata, \n                             color = '#316879', \n                             weight = 1,\n                             layerId = ~country,\n                             label = ~country,\n                             fillColor = \"#7fe7dc\",\n                             fillOpacity = .5,\n                             highlight = highlightOptions(\n                               fillOpacity = 1,\n                               bringToFront = TRUE\n                             )) |&gt;\n        leaflet::setView(zoom = 1, lng = 0, lat =50)\n      \n    })\n    \n    # Reset the map filter\n    shiny::observeEvent(input$resetmap, {\n      \n      rv$selected_countries &lt;- NULL\n      rv$last_click_id &lt;- NULL\n      rv$filtered_data &lt;- mapdata\n      \n      leafletProxy(\"mapfilter\", session) |&gt;\n        leaflet::addPolygons(data = mapdata, \n                             color = '#316879', \n                             weight = 1,\n                             layerId = ~country,\n                             label = ~country,\n                             fillColor = \"#7fe7dc\",\n                             fillOpacity = .5,\n                             highlight = highlightOptions(\n                               fillOpacity = 1,\n                               bringToFront = TRUE\n                             )) |&gt;\n        leaflet::setView(zoom = 1, lng = 0, lat =50)\n      \n    })\n    \n\n    # Return reactive values\n    return(\n      list(\n        value = shiny::reactive(rv$selected_countries),\n        filtered  = shiny::reactive(rv$filtered_data)\n      )\n    )\n   \n}   \n\n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#mini-app-map-filter---code",
+    "href": "slides/intro-to-shiny.html#mini-app-map-filter---code",
+    "title": "shiny-workshops",
+    "section": "Mini App: Map Filter - code",
+    "text": "Mini App: Map Filter - code\n\n# Packages -----\nlibrary(shiny)\nlibrary(leaflet)\nlibrary(spData)\nlibrary(dplyr)\nlibrary(sf)\n\n# Prepare Data -----\ndata(world)\nmapdata &lt;- world |&gt; mutate(country = name_long)\n\n# UI -----\nui &lt;- function(id) {\n  shiny::fluidPage(\n    shiny::wellPanel(shiny::actionButton(\"resetmap\", \"Reset Map\")),\n    leaflet::leafletOutput(\"mapfilter\", height = 400),\n    shiny::tags$h4(\"Selected countries:\"),\n    shiny::verbatimTextOutput(\"filtered_country\")\n  )\n}\n\n# Server -----\nserver &lt;- function(input, output, session) {\n    \n    # Define reactive values\n    rv &lt;- shiny::reactiveValues(selected_countries = NULL, # Initialize reactive value for selected counties\n                                last_click_id = NULL,\n                                filtered_data = mapdata) \n    \n    \n    shiny::observeEvent(input$mapfilter_shape_click, { # this is the logic behind the \"click\" of the map.\n      \n      click &lt;- input$mapfilter_shape_click\n      rv$last_click_id &lt;- click$id \n      ########## map behavior ################\n      \n      # If a country is clicked\n      if (click$id %in% rv$selected_countries) {\n        # If selected, remove it\n        rv$selected_countries &lt;- rv$selected_countries[rv$selected_countries != click$id]\n        \n      } else if(click$id == \"selected\"){ # when a county is clicked again it is removed\n        \n        rv$selected_countries &lt;- rv$selected_countries[rv$selected_countries != tail(rv$selected_countries, n = 1)]\n        \n      }else {\n        # If not selected, add it\n        rv$selected_countries &lt;- c(rv$selected_countries, click$id)\n      }\n      \n      # Now update the leaflet\n      leaflet::leafletProxy(\"mapfilter\", session) |&gt;\n        leaflet::addPolygons(data = mapdata,\n                             layerId = ~country,\n                             label = ~country,\n                             fillColor = ifelse(mapdata$country %in% rv$selected_countries, \"#F47A60\", \"#7fe7dc\"), # Change fill color based on selection\n                             col = \"#316879\",\n                             weight = 2,\n                             fillOpacity = ifelse(mapdata$country %in% rv$selected_countries, 1, 0.5),\n                             highlight = highlightOptions(\n                               fillOpacity = 1,\n                               bringToFront = TRUE)\n        )\n      \n    })\n    \n    output$filtered_country &lt;- shiny::renderPrint({\n      paste(rv$selected_countries, collapse = ',')\n    })\n    \n    # Leaflet\n    output$mapfilter &lt;- leaflet::renderLeaflet({ # rendering the filter map\n      \n      leaflet::leaflet() |&gt; \n        leaflet::addTiles() |&gt; # The is the base map\n        leaflet::addPolygons(data = mapdata, \n                             color = '#316879', \n                             weight = 1,\n                             layerId = ~country,\n                             label = ~country,\n                             fillColor = \"#7fe7dc\",\n                             fillOpacity = .5,\n                             highlight = highlightOptions(\n                               fillOpacity = 1,\n                               bringToFront = TRUE\n                             )) |&gt;\n        leaflet::setView(zoom = 1, lng = 0, lat =50)\n      \n    })\n    \n    # Reset the map filter\n    shiny::observeEvent(input$resetmap, {\n      \n      rv$selected_countries &lt;- NULL\n      rv$last_click_id &lt;- NULL\n      rv$filtered_data &lt;- mapdata\n      \n      leafletProxy(\"mapfilter\", session) |&gt;\n        leaflet::addPolygons(data = mapdata, \n                             color = '#316879', \n                             weight = 1,\n                             layerId = ~country,\n                             label = ~country,\n                             fillColor = \"#7fe7dc\",\n                             fillOpacity = .5,\n                             highlight = highlightOptions(\n                               fillOpacity = 1,\n                               bringToFront = TRUE\n                             )) |&gt;\n        leaflet::setView(zoom = 1, lng = 0, lat =50)\n      \n    })\n    \n\n    # Return reactive values\n    return(\n      list(\n        value = shiny::reactive(rv$selected_countries),\n        filtered  = shiny::reactive(rv$filtered_data)\n      )\n    )\n   \n}   \n\n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#hosting-and-deployment",
+    "href": "slides/intro-to-shiny.html#hosting-and-deployment",
+    "title": "shiny-workshops",
+    "section": "Hosting and deployment",
+    "text": "Hosting and deployment\n\nShinyapps.io\nShiny Server (on-premises or cloud)\nPosit Connect\nDocker container\nshinylive"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#resources",
+    "href": "slides/intro-to-shiny.html#resources",
+    "title": "shiny-workshops",
+    "section": "Resources",
+    "text": "Resources\n\nShiny official website: https://shiny.posit.co/\nShiny cheat sheet: https://shiny.posit.co/r/articles/start/cheatsheet/\nBook - Mastering Shiny by Hadley Wickham: https://mastering-shiny.org/\nShiny official GitHub: https://github.com/rstudio/shiny\nStack Overflow: https://stackoverflow.com/questions/tagged/shiny\nBook - Engineering Production-Grade Shiny Apps: https://engineering-shiny.org/\nAwesome R Shiny: https://github.com/grabear/awesome-rshiny\nAwesome Shiny Extensions: https://github.com/nanxstats/awesome-shiny-extensions"
+  },
+  {
+    "objectID": "slides/intro-to-shiny.html#thank-you-and-questions",
+    "href": "slides/intro-to-shiny.html#thank-you-and-questions",
+    "title": "shiny-workshops",
+    "section": "Thank You and Questions?",
+    "text": "Thank You and Questions?"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-1-initiate-step-1",
+    "href": "slides/intro-to-rhino.html#exercise-1-initiate-step-1",
+    "title": "shiny-workshops",
+    "section": "Exercise 1 – initiate [Step 1]",
+    "text": "Exercise 1 – initiate [Step 1]\nCreate your rhino app with the New Project feature with R studio."
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-1---setup-step-2",
+    "href": "slides/intro-to-rhino.html#exercise-1---setup-step-2",
+    "title": "shiny-workshops",
+    "section": "Exercise 1 - Setup [Step 2]",
+    "text": "Exercise 1 - Setup [Step 2]\n\n\n\nOr Start your Rhino with rhino::init(\"first-rhino-app\")\nEnable automatic reloading with shiny::devmode().\nRun the app with shiny::runApp().\nCheck your project directory"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-1---hello-world-step-3",
+    "href": "slides/intro-to-rhino.html#exercise-1---hello-world-step-3",
+    "title": "shiny-workshops",
+    "section": "Exercise 1 - Hello, World! [Step 3]",
+    "text": "Exercise 1 - Hello, World! [Step 3]\n\nEdit the displayed message in app/main.R\n\n\nbox::use(\n  shiny[bootstrapPage, div, moduleServer, NS, renderUI, tags, uiOutput],\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- NS(id)\n  bootstrapPage(\n    uiOutput(ns(\"message\"))\n  )\n}\n\n#' @export\nserver &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$message &lt;- renderUI({\n      div(\n        style = \"display: flex; justify-content: center; align-items: center; height: 100vh;\",\n        tags$h1(\n           tags$a(\"Hello, World! Check out Rhino docs!\", \n                  href = \"https://appsilon.github.io/rhino/\")\n        )\n      )\n    })\n  })\n}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-1---what-is-ns---nsid-step-3.5",
+    "href": "slides/intro-to-rhino.html#exercise-1---what-is-ns---nsid-step-3.5",
+    "title": "shiny-workshops",
+    "section": "Exercise 1 - What is ns <- NS(id) [Step 3.5]",
+    "text": "Exercise 1 - What is ns &lt;- NS(id) [Step 3.5]\n\nbox::use(\n  shiny[bootstrapPage, div, moduleServer, NS, renderUI, tags, uiOutput],\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- NS(id)\n  bootstrapPage(uiOutput(ns(\"message\")))\n}\n\n\nNS(id) is used in Shiny modules to create a namespace function that helps\ngenerate unique, namespaced IDs for inputs and outputs within the module.\nUnder rhino framework, in the UI, the ID must be wrapped in ns(), but in the server the namespace is applied automatically.\nLearn more in Modularizing Shiny app code"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#step-4-exercise-1---hello",
+    "href": "slides/intro-to-rhino.html#step-4-exercise-1---hello",
+    "title": "shiny-workshops",
+    "section": "[Step 4] Exercise 1 - Hello",
+    "text": "[Step 4] Exercise 1 - Hello\n\nTry shiny::runExample (\"01_hello\")\nWe will convert the syntax for the rhino app\n\n\n\n\n\n\n\nFind 01_Exercise\nMake sure you have the {shiny} package installed.\nCreate an app.R file.\nload shiny with library(shiny)\nAdd ui and server elements,\nas well as shinyApp(ui = ui, server = server).\nClick Run - Check it works.\n\n\nlibrary(shiny)\n# UI -----\nui &lt;- fluidPage(\n  h1(\"Hello, World!\")\n)\n\n# Server -----\nserver &lt;- function(input, output, session) {\n}\n\n# Run the app -----\nshinyApp(ui = ui, server = server)\n\n\nCopy the following code to app/main.R and see what happens.\n‘Warning: Error in renderPlot: object ’faithful’ not found’\n\n\nbox::use(\n  shiny\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- shiny$NS(id)\n  \n  shiny$fluidPage(\n    shiny$titlePanel(\"Hello, Name\"),\n    shiny$sidebarLayout(\n      shiny$sidebarPanel(\n         # Text Input\n         shiny$textInput(\n                    inputId = ns('yname'),\n                   label = 'Your Name',\n                   value = '',\n                   placeholder = NULL),\n         shiny$sliderInput(\n         inputId = ns(\"bins\"),\n      label = \"Number of bins:\",\n      min = 1,\n      max = 50,\n      value = 30\n    )\n)\n\n      ),\n      shiny$mainPanel(\n      shiny$verbatimTextOutput(ns(\"hellotext\")),\n      shiny$plotOutput(outputId = ns(\"distPlot\"))\n      \n\n      ),\n      position = \"right\"\n    )\n  )\n}\n\n#' @export\nserver &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$message &lt;- renderUI({\n      div(\n        style = \"display: flex; justify-content: center; align-items: center; height: 100vh;\",\n        tags$h1(\n           tags$a(\"Hello, World! Check out Rhino docs!\", href = \"https://appsilon.github.io/rhino/\")\n        )\n      )\n    })\n  })\n}\n\n\nbox::use(\n  shiny,\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- NS(id)\n  shiny::textInput(inputId = ns('yname'),\n                   label = 'Your Name',\n                   value = '',\n                   placeholder = NULL)\n  shiny::verbatimTextOutput(ns(\"hellotext\"))\n}\n\n#' @export\nserver &lt;- function(id) {\n  moduleServer(id, function(input, output, session) {\n    output$hellotext &lt;- shiny::renderText({\n        paste('Hello, ', input$yname, \"!\", sep = '')\n    })\n  })\n}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-1---hellostep-4",
+    "href": "slides/intro-to-rhino.html#exercise-1---hellostep-4",
+    "title": "shiny-workshops",
+    "section": "Exercise 1 - Hello[Step 4]",
+    "text": "Exercise 1 - Hello[Step 4]\n\n\n\n\n\n\nTry shiny::runExample (\"01_hello\")\nWe will convert a traditional shiny app into a modular Rhino app script\nCheck the traditional shiny app script [../exercise/01_hello.R]\nComplete the modular Rhino app script [../exercise/01_hello_rhino.R]\nCopy the syntax and create your /app/view/hist.R"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#why-rhino---clear-code",
+    "href": "slides/intro-to-rhino.html#why-rhino---clear-code",
+    "title": "shiny-workshops",
+    "section": "Why Rhino? - Clear Code",
+    "text": "Why Rhino? - Clear Code\nScalable App Architecture\n\nModularization with {box} package\nShiny modules as building blocks\nLogic and view separation"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-2---logic-and-view",
+    "href": "slides/intro-to-rhino.html#exercise-2---logic-and-view",
+    "title": "shiny-workshops",
+    "section": "Exercise 2 - Logic and View",
+    "text": "Exercise 2 - Logic and View"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#thank-you-questions",
+    "href": "slides/intro-to-rhino.html#thank-you-questions",
+    "title": "shiny-workshops",
+    "section": "Thank you & Questions?",
+    "text": "Thank you & Questions?"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-2---call-a-module-from-view",
+    "href": "slides/intro-to-rhino.html#exercise-2---call-a-module-from-view",
+    "title": "shiny-workshops",
+    "section": "Exercise 2 - Call a module from View",
+    "text": "Exercise 2 - Call a module from View\n\nRelevant Files: .\\Exercise\n\n02_Exercise.md\n02_helloname.R\n02_hello_mod.R"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-3---logic-and-view",
+    "href": "slides/intro-to-rhino.html#exercise-3---logic-and-view",
+    "title": "shiny-workshops",
+    "section": "Exercise 3 - Logic and View",
+    "text": "Exercise 3 - Logic and View\nReverse the word! –&gt; logic"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-4---logic-and-view-and-static",
+    "href": "slides/intro-to-rhino.html#exercise-4---logic-and-view-and-static",
+    "title": "shiny-workshops",
+    "section": "Exercise 4 - Logic and View and Static",
+    "text": "Exercise 4 - Logic and View and Static\nFavourites –&gt; logic and view and static"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-5---ai-to-help---map-filter",
+    "href": "slides/intro-to-rhino.html#exercise-5---ai-to-help---map-filter",
+    "title": "shiny-workshops",
+    "section": "Exercise 5 - AI to help - Map filter!",
+    "text": "Exercise 5 - AI to help - Map filter!"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-1---ns---nsid-step-3.5",
+    "href": "slides/intro-to-rhino.html#exercise-1---ns---nsid-step-3.5",
+    "title": "shiny-workshops",
+    "section": "Exercise 1 - ns <- NS(id) [Step 3.5]",
+    "text": "Exercise 1 - ns &lt;- NS(id) [Step 3.5]\n\nbox::use(\n  shiny[bootstrapPage, div, moduleServer, NS, renderUI, tags, uiOutput],\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- NS(id)\n  bootstrapPage(uiOutput(ns(\"message\")))\n}\n\n\nNS(id) is used in Shiny modules to create a namespace function that helps\ngenerate unique, namespaced IDs for inputs and outputs within the module.\nUnder rhino framework, in the UI, the ID must be wrapped in ns(), but in the server the namespace is applied automatically.\nLearn more in Modularizing Shiny app code"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-2---call-a-module-step-1",
+    "href": "slides/intro-to-rhino.html#exercise-2---call-a-module-step-1",
+    "title": "shiny-workshops",
+    "section": "Exercise 2 - Call a module [Step 1]",
+    "text": "Exercise 2 - Call a module [Step 1]\n\n\n\nCall the ‘hist.R’ from your main.R with the following syntax\nSee the app\n\n\nbox::use(\n  shiny\n)\n\nbox::use(\n  app/view/hist\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- shiny$NS(id)\n  \n  shiny$fluidPage(\n    hist$ui(ns('mod1'))\n  )\n  \n}\n\n#' @export\nserver &lt;- function(id) {\n  shiny$moduleServer(id, function(input, output, session) {\n    \n    hist$server(\"mod1\")\n    \n  })\n}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-2---call-a-module-from-view-step-2",
+    "href": "slides/intro-to-rhino.html#exercise-2---call-a-module-from-view-step-2",
+    "title": "shiny-workshops",
+    "section": "Exercise 2 - Call a module from View [Step 2]",
+    "text": "Exercise 2 - Call a module from View [Step 2]\n\n\n\nCopy and update the syntax /exercise/02_hello_mod.R\nand create your /app/view/hello.R\nCall the ‘hello.R’ from your main.R\nSee the app\n\n\n# app/view/hello.R\n\nbox::use(\n  shiny,\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- shiny$NS(id)\n  shiny$div(\n    shiny$h1(\"Hello, World!\"),\n    \n    ## update the inputID with ns()\n    shiny$textInput(inputId = , \n                    label = \"Your Name\",\n                    value = '',\n                    placeholder = NULL),\n    \n    \n    ## update the outputId with ns()\n    shiny$textOutput(outputId = ?)\n  )\n}\n\n#' @export\nserver &lt;- function(id) {\n  shiny$moduleServer(id, function(input, output, session) {\n    # inputID & # outputId\n    \n    output$______ &lt;- shiny::renderText({\n      paste('Hello, ', input$_____, \"!\", sep = '')\n    })\n  })\n}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-3---logic-and-view-step1",
+    "href": "slides/intro-to-rhino.html#exercise-3---logic-and-view-step1",
+    "title": "shiny-workshops",
+    "section": "Exercise 3 - Logic and View [Step1]",
+    "text": "Exercise 3 - Logic and View [Step1]\n\n\nReverse the word! - logic\n\nCopy the following syntax and create your app/logic/reverse.R\n/exercise/03_reverse_logic.R\n\n\n# app/logic/reverse.R\n\nbox::use(\n  stringi[stri_reverse]\n)\n\n#' @export\nreverse_words &lt;- function(text) {\n  stringi::stri_reverse(text)\n}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-3---logic-and-view-step2",
+    "href": "slides/intro-to-rhino.html#exercise-3---logic-and-view-step2",
+    "title": "shiny-workshops",
+    "section": "Exercise 3 - Logic and View [Step2]",
+    "text": "Exercise 3 - Logic and View [Step2]\n\n\n\nRefer to /exercise/03_reverse.R to update your app/view/hello.R\n\ncall the function at beginning\n\n\nbox::use(\n  app/logic/reverse[reverse_words]\n)\n\n\nAdd new output with reversed name in UI\nUpdate the Server"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-2---view-step-1",
+    "href": "slides/intro-to-rhino.html#exercise-2---view-step-1",
+    "title": "shiny-workshops",
+    "section": "Exercise 2 - View [Step 1]",
+    "text": "Exercise 2 - View [Step 1]\n\n\n\nCall the ‘hist.R’ from your main.R with the following syntax\nSee the app\n\n\nbox::use(\n  shiny\n)\n\nbox::use(\n  app/view/hist\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- shiny$NS(id)\n  \n  shiny$fluidPage(\n    hist$ui(ns('mod1'))\n  )\n  \n}\n\n#' @export\nserver &lt;- function(id) {\n  shiny$moduleServer(id, function(input, output, session) {\n    \n    hist$server(\"mod1\")\n    \n  })\n}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#exercise-2---view-step-2",
+    "href": "slides/intro-to-rhino.html#exercise-2---view-step-2",
+    "title": "shiny-workshops",
+    "section": "Exercise 2 - View [Step 2]",
+    "text": "Exercise 2 - View [Step 2]\n\n\n\nCopy the syntax /exercise/02_hello_mod.R\ncreate and update your /app/view/hello.R\nCall the ‘hello.R’ from your main.R\nSee the app\n\n\n# app/view/hello.R\n\nbox::use(\n  shiny,\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- shiny$NS(id)\n  shiny$div(\n    shiny$h1(\"Hello, World!\"),\n    \n    ## update the inputID with ns()\n    shiny$textInput(inputId = , \n                    label = \"Your Name\",\n                    value = '',\n                    placeholder = NULL),\n    \n    \n    ## update the outputId with ns()\n    shiny$textOutput(outputId = ?)\n  )\n}\n\n#' @export\nserver &lt;- function(id) {\n  shiny$moduleServer(id, function(input, output, session) {\n    # inputID & # outputId\n    \n    output$______ &lt;- shiny::renderText({\n      paste('Hello, ', input$_____, \"!\", sep = '')\n    })\n  })\n}"
+  },
+  {
+    "objectID": "slides/intro-to-rhino.html#mini-app-map-filter---code",
+    "href": "slides/intro-to-rhino.html#mini-app-map-filter---code",
+    "title": "shiny-workshops",
+    "section": "Mini App: Map Filter - code",
+    "text": "Mini App: Map Filter - code\n\n# Packages -----\nlibrary(shiny)\nlibrary(leaflet)\nlibrary(spData)\nlibrary(dplyr)\nlibrary(sf)\n\n# Prepare Data -----\ndata(world)\nmapdata &lt;- world |&gt; mutate(country = name_long)\n\n# UI -----\nui &lt;- function(id) {\n  shiny::fluidPage(\n    shiny::wellPanel(shiny::actionButton(\"resetmap\", \"Reset Map\")),\n    leaflet::leafletOutput(\"mapfilter\", height = 400),\n    shiny::tags$h4(\"Selected countries:\"),\n    shiny::verbatimTextOutput(\"filtered_country\")\n  )\n}\n\n# Server -----\nserver &lt;- function(input, output, session) {\n    \n    # Define reactive values\n    rv &lt;- shiny::reactiveValues(selected_countries = NULL, # Initialize reactive value for selected counties\n                                last_click_id = NULL,\n                                filtered_data = mapdata) \n    \n    \n    shiny::observeEvent(input$mapfilter_shape_click, { # this is the logic behind the \"click\" of the map.\n      \n      click &lt;- input$mapfilter_shape_click\n      rv$last_click_id &lt;- click$id \n      ########## map behavior ################\n      \n      # If a country is clicked\n      if (click$id %in% rv$selected_countries) {\n        # If selected, remove it\n        rv$selected_countries &lt;- rv$selected_countries[rv$selected_countries != click$id]\n        \n      } else if(click$id == \"selected\"){ # when a county is clicked again it is removed\n        \n        rv$selected_countries &lt;- rv$selected_countries[rv$selected_countries != tail(rv$selected_countries, n = 1)]\n        \n      }else {\n        # If not selected, add it\n        rv$selected_countries &lt;- c(rv$selected_countries, click$id)\n      }\n      \n      # Now update the leaflet\n      leaflet::leafletProxy(\"mapfilter\", session) |&gt;\n        leaflet::addPolygons(data = mapdata,\n                             layerId = ~country,\n                             label = ~country,\n                             fillColor = ifelse(mapdata$country %in% rv$selected_countries, \"#F47A60\", \"#7fe7dc\"), # Change fill color based on selection\n                             col = \"#316879\",\n                             weight = 2,\n                             fillOpacity = ifelse(mapdata$country %in% rv$selected_countries, 1, 0.5),\n                             highlight = highlightOptions(\n                               fillOpacity = 1,\n                               bringToFront = TRUE)\n        )\n      \n    })\n    \n    output$filtered_country &lt;- shiny::renderPrint({\n      paste(rv$selected_countries, collapse = ',')\n    })\n    \n    # Leaflet\n    output$mapfilter &lt;- leaflet::renderLeaflet({ # rendering the filter map\n      \n      leaflet::leaflet() |&gt; \n        leaflet::addTiles() |&gt; # The is the base map\n        leaflet::addPolygons(data = mapdata, \n                             color = '#316879', \n                             weight = 1,\n                             layerId = ~country,\n                             label = ~country,\n                             fillColor = \"#7fe7dc\",\n                             fillOpacity = .5,\n                             highlight = highlightOptions(\n                               fillOpacity = 1,\n                               bringToFront = TRUE\n                             )) |&gt;\n        leaflet::setView(zoom = 1, lng = 0, lat =50)\n      \n    })\n    \n    # Reset the map filter\n    shiny::observeEvent(input$resetmap, {\n      \n      rv$selected_countries &lt;- NULL\n      rv$last_click_id &lt;- NULL\n      rv$filtered_data &lt;- mapdata\n      \n      leafletProxy(\"mapfilter\", session) |&gt;\n        leaflet::addPolygons(data = mapdata, \n                             color = '#316879', \n                             weight = 1,\n                             layerId = ~country,\n                             label = ~country,\n                             fillColor = \"#7fe7dc\",\n                             fillOpacity = .5,\n                             highlight = highlightOptions(\n                               fillOpacity = 1,\n                               bringToFront = TRUE\n                             )) |&gt;\n        leaflet::setView(zoom = 1, lng = 0, lat =50)\n      \n    })\n    \n\n    # Return reactive values\n    return(\n      list(\n        value = shiny::reactive(rv$selected_countries),\n        filtered  = shiny::reactive(rv$filtered_data)\n      )\n    )\n   \n}   \n\n\n# Run the app -----\nshinyApp(ui = ui, server = server)"
+  }
+]
