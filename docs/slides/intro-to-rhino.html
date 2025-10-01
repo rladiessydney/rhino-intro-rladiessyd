@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-9f30c2c2d2429ed22c1cf9f617479b3b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>shiny-workshops – intro-to-rhino</title>
+  <title>intro-to-rhino</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -328,7 +328,6 @@ LinkedIn: <a href="https://www.linkedin.com/in/rorychenxy" class="uri">https://w
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(<span class="st">"./github/gladse"</span>, <span class="at">recurse =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>&nbsp; &nbsp;</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource plaintext number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>~/gladse</span>
@@ -484,8 +483,8 @@ generate unique, namespaced IDs for inputs and outputs within the module.</li>
 <ul>
 <li><p>Try <code>shiny::runExample ("01_hello")</code></p></li>
 <li><p>We will convert a traditional shiny app into a modular Rhino app script</p></li>
-<li><p>Check the traditional shiny app script [../exercise/01_hello.R]</p></li>
-<li><p>Complete the modular Rhino app script [../exercise/01_hello_rhino.R]</p></li>
+<li><p>Check the traditional shiny app script: <a href="https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/01_hello.R">01_hello.R</a></p></li>
+<li><p>Complete the modular Rhino app script: <a href="https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/01_hello_rhino.R">01_hello_rhino.R</a></p></li>
 <li><p>Copy the syntax and create your <code>/app/view/hist.R</code></p></li>
 </ul>
 </div></div>
@@ -505,7 +504,6 @@ generate unique, namespaced IDs for inputs and outputs within the module.</li>
 <div class="column" style="width:75%;">
 <ul>
 <li>Call the ‘hist.R’ from your <code>main.R</code> with the following syntax</li>
-<li>See the app</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>box<span class="sc">::</span><span class="fu">use</span>(</span>
@@ -545,8 +543,8 @@ generate unique, namespaced IDs for inputs and outputs within the module.</li>
 <div class="columns">
 <div class="column" style="width:75%;">
 <ul>
-<li>Copy the syntax <code>/exercise/02_hello_mod.R</code></li>
-<li>create and update your <code>/app/view/hello.R</code></li>
+<li>Copy the syntax: <a href="https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/02_hello_mod.R">02_hello_mod.R</a></li>
+<li>Create and update your <code>/app/view/hello.R</code></li>
 <li>Call the ‘hello.R’ from your <code>main.R</code></li>
 <li>See the app</li>
 </ul>
@@ -564,7 +562,7 @@ generate unique, namespaced IDs for inputs and outputs within the module.</li>
 <span id="cb7-11"><a></a>    shiny<span class="sc">$</span><span class="fu">h1</span>(<span class="st">"Hello, World!"</span>),</span>
 <span id="cb7-12"><a></a>    </span>
 <span id="cb7-13"><a></a>    <span class="do">## update the inputID with ns()</span></span>
-<span id="cb7-14"><a></a>    shiny<span class="sc">$</span><span class="fu">textInput</span>(<span class="at">inputId =</span> , </span>
+<span id="cb7-14"><a></a>    shiny<span class="sc">$</span><span class="fu">textInput</span>(<span class="at">inputId =</span> ?, </span>
 <span id="cb7-15"><a></a>                    <span class="at">label =</span> <span class="st">"Your Name"</span>,</span>
 <span id="cb7-16"><a></a>                    <span class="at">value =</span> <span class="st">''</span>,</span>
 <span id="cb7-17"><a></a>                    <span class="at">placeholder =</span> <span class="cn">NULL</span>),</span>
@@ -591,14 +589,13 @@ generate unique, namespaced IDs for inputs and outputs within the module.</li>
 </iframe>
 </div></div>
 </section>
-<section id="exercise-3---logic-and-view-step1" class="slide level2">
-<h2>Exercise 3 - Logic and View [Step1]</h2>
+<section id="exercise-3---reverse-the-word---logicstep1" class="slide level2">
+<h2>Exercise 3 - Reverse the word! - Logic[Step1]</h2>
 <div class="columns">
 <div class="column" style="width:75%;">
-<p>Reverse the word! - logic</p>
 <ul>
-<li>Copy the following syntax and create your <code>app/logic/reverse.R</code></li>
-<li><code>/exercise/03_reverse_logic.R</code></li>
+<li><p>Copy the following syntax: <a href="https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/03_reverse_logic.R">03_reverse_logic.R</a></p></li>
+<li><p>Create your <code>app/logic/reverse.R</code></p></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># app/logic/reverse.R</span></span>
@@ -622,7 +619,8 @@ generate unique, namespaced IDs for inputs and outputs within the module.</li>
 <div class="columns">
 <div class="column" style="width:75%;">
 <ul>
-<li><p>Refer to <code>/exercise/03_reverse.R</code> to update your <code>app/view/hello.R</code></p>
+<li><p>Refer to <a href="https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/03_reverse.R">03_reverse.R</a></p></li>
+<li><p>Update your <code>app/view/hello.R</code></p>
 <ul>
 <li>call the function at beginning</li>
 </ul>
@@ -638,6 +636,46 @@ generate unique, namespaced IDs for inputs and outputs within the module.</li>
 </ul>
 </div><div class="column" style="width:25%;">
 <iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=3&amp;sec=0" frameborder="0">
+</iframe>
+</div></div>
+</section>
+<section id="exercise-4---logic-and-view-and-static-step-1" class="slide level2">
+<h2>Exercise 4 - Logic and View and Static [Step 1]</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>Download the <a href="https://github.com/RoryChenXY/rhino-intro-rladiessyd/tree/main/exercise/img">img</a> folder into your <code>app/static</code> folder</li>
+<li>Refer to <a href="https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/04_const.R">04_const.R</a>, create your <code>app/logic/const.R</code></li>
+<li>Refer to <a href="https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/04_favorites.R">04_favorites.R</a>, complete the script and create your <code>app/view/favorites.R</code></li>
+</ul>
+</div><div class="column" style="width:25%;">
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=5&amp;sec=0" frameborder="0">
+</iframe>
+</div></div>
+</section>
+<section id="exercise-4---logic-and-view-and-static-step-2" class="slide level2">
+<h2>Exercise 4 - Logic and View and Static [Step 2]</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<ul>
+<li>Update your <code>main.R</code> to call the ‘favorite’ module</li>
+</ul>
+<pre><code>box::use(
+ # Call the const we defined
+)
+
+# Call the favorite module with different options
+
+## UI
+favorites$ui(ns("fruits"), category = "fruits", choices = const$fruits),
+favorites$ui(ns("vege"), category = "vegetables", choices = const$vegetables),
+
+## Server
+favorites$server("fruits")
+favorites$server("vege")
+</code></pre>
+</div><div class="column" style="width:25%;">
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=5&amp;sec=0" frameborder="0">
 </iframe>
 </div></div>
 </section>
@@ -660,139 +698,141 @@ generate unique, namespaced IDs for inputs and outputs within the module.</li>
 <li><strong>Configuration Management</strong> with <code>{config}</code></li>
 </ul>
 </section>
-<section id="exercise-5---ai-to-help---map-filter" class="slide level2">
-<h2>Exercise 5 - AI to help - Map filter!</h2>
+<section id="exercise-5---map-filter" class="slide level2">
+<h2>Exercise 5 - Map filter!</h2>
+<p>Refer to this map filter app <a href="https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/05_mapfilter.R">05_mapfilter.R</a></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a></span>
+<span id="cb11-2"><a></a><span class="co"># Packages -----</span></span>
+<span id="cb11-3"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb11-4"><a></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb11-5"><a></a><span class="fu">library</span>(spData)</span>
+<span id="cb11-6"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-7"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb11-8"><a></a></span>
+<span id="cb11-9"><a></a><span class="co"># Prepare Data -----</span></span>
+<span id="cb11-10"><a></a><span class="fu">data</span>(world)</span>
+<span id="cb11-11"><a></a>mapdata <span class="ot">&lt;-</span> world <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">country =</span> name_long)</span>
+<span id="cb11-12"><a></a></span>
+<span id="cb11-13"><a></a><span class="co"># UI -----</span></span>
+<span id="cb11-14"><a></a>ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb11-15"><a></a>  shiny<span class="sc">::</span><span class="fu">fluidPage</span>(</span>
+<span id="cb11-16"><a></a>    shiny<span class="sc">::</span><span class="fu">wellPanel</span>(shiny<span class="sc">::</span><span class="fu">actionButton</span>(<span class="st">"resetmap"</span>, <span class="st">"Reset Map"</span>)),</span>
+<span id="cb11-17"><a></a>    leaflet<span class="sc">::</span><span class="fu">leafletOutput</span>(<span class="st">"mapfilter"</span>, <span class="at">height =</span> <span class="dv">400</span>),</span>
+<span id="cb11-18"><a></a>    shiny<span class="sc">::</span>tags<span class="sc">$</span><span class="fu">h4</span>(<span class="st">"Selected countries:"</span>),</span>
+<span id="cb11-19"><a></a>    shiny<span class="sc">::</span><span class="fu">verbatimTextOutput</span>(<span class="st">"filtered_country"</span>)</span>
+<span id="cb11-20"><a></a>  )</span>
+<span id="cb11-21"><a></a>}</span>
+<span id="cb11-22"><a></a></span>
+<span id="cb11-23"><a></a><span class="co"># Server -----</span></span>
+<span id="cb11-24"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb11-25"><a></a>    </span>
+<span id="cb11-26"><a></a>    <span class="co"># Define reactive values</span></span>
+<span id="cb11-27"><a></a>    rv <span class="ot">&lt;-</span> shiny<span class="sc">::</span><span class="fu">reactiveValues</span>(<span class="at">selected_countries =</span> <span class="cn">NULL</span>, <span class="co"># Initialize reactive value for selected counties</span></span>
+<span id="cb11-28"><a></a>                                <span class="at">last_click_id =</span> <span class="cn">NULL</span>,</span>
+<span id="cb11-29"><a></a>                                <span class="at">filtered_data =</span> mapdata) </span>
+<span id="cb11-30"><a></a>    </span>
+<span id="cb11-31"><a></a>    </span>
+<span id="cb11-32"><a></a>    shiny<span class="sc">::</span><span class="fu">observeEvent</span>(input<span class="sc">$</span>mapfilter_shape_click, { <span class="co"># this is the logic behind the "click" of the map.</span></span>
+<span id="cb11-33"><a></a>      </span>
+<span id="cb11-34"><a></a>      click <span class="ot">&lt;-</span> input<span class="sc">$</span>mapfilter_shape_click</span>
+<span id="cb11-35"><a></a>      rv<span class="sc">$</span>last_click_id <span class="ot">&lt;-</span> click<span class="sc">$</span>id </span>
+<span id="cb11-36"><a></a>      <span class="do">########## map behavior ################</span></span>
+<span id="cb11-37"><a></a>      </span>
+<span id="cb11-38"><a></a>      <span class="co"># If a country is clicked</span></span>
+<span id="cb11-39"><a></a>      <span class="cf">if</span> (click<span class="sc">$</span>id <span class="sc">%in%</span> rv<span class="sc">$</span>selected_countries) {</span>
+<span id="cb11-40"><a></a>        <span class="co"># If selected, remove it</span></span>
+<span id="cb11-41"><a></a>        rv<span class="sc">$</span>selected_countries <span class="ot">&lt;-</span> rv<span class="sc">$</span>selected_countries[rv<span class="sc">$</span>selected_countries <span class="sc">!=</span> click<span class="sc">$</span>id]</span>
+<span id="cb11-42"><a></a>        </span>
+<span id="cb11-43"><a></a>      } <span class="cf">else</span> <span class="cf">if</span>(click<span class="sc">$</span>id <span class="sc">==</span> <span class="st">"selected"</span>){ <span class="co"># when a county is clicked again it is removed</span></span>
+<span id="cb11-44"><a></a>        </span>
+<span id="cb11-45"><a></a>        rv<span class="sc">$</span>selected_countries <span class="ot">&lt;-</span> rv<span class="sc">$</span>selected_countries[rv<span class="sc">$</span>selected_countries <span class="sc">!=</span> <span class="fu">tail</span>(rv<span class="sc">$</span>selected_countries, <span class="at">n =</span> <span class="dv">1</span>)]</span>
+<span id="cb11-46"><a></a>        </span>
+<span id="cb11-47"><a></a>      }<span class="cf">else</span> {</span>
+<span id="cb11-48"><a></a>        <span class="co"># If not selected, add it</span></span>
+<span id="cb11-49"><a></a>        rv<span class="sc">$</span>selected_countries <span class="ot">&lt;-</span> <span class="fu">c</span>(rv<span class="sc">$</span>selected_countries, click<span class="sc">$</span>id)</span>
+<span id="cb11-50"><a></a>      }</span>
+<span id="cb11-51"><a></a>      </span>
+<span id="cb11-52"><a></a>      <span class="co"># Now update the leaflet</span></span>
+<span id="cb11-53"><a></a>      leaflet<span class="sc">::</span><span class="fu">leafletProxy</span>(<span class="st">"mapfilter"</span>, session) <span class="sc">|&gt;</span></span>
+<span id="cb11-54"><a></a>        leaflet<span class="sc">::</span><span class="fu">addPolygons</span>(<span class="at">data =</span> mapdata,</span>
+<span id="cb11-55"><a></a>                             <span class="at">layerId =</span> <span class="sc">~</span>country,</span>
+<span id="cb11-56"><a></a>                             <span class="at">label =</span> <span class="sc">~</span>country,</span>
+<span id="cb11-57"><a></a>                             <span class="at">fillColor =</span> <span class="fu">ifelse</span>(mapdata<span class="sc">$</span>country <span class="sc">%in%</span> rv<span class="sc">$</span>selected_countries, <span class="st">"#F47A60"</span>, <span class="st">"#7fe7dc"</span>), <span class="co"># Change fill color based on selection</span></span>
+<span id="cb11-58"><a></a>                             <span class="at">col =</span> <span class="st">"#316879"</span>,</span>
+<span id="cb11-59"><a></a>                             <span class="at">weight =</span> <span class="dv">2</span>,</span>
+<span id="cb11-60"><a></a>                             <span class="at">fillOpacity =</span> <span class="fu">ifelse</span>(mapdata<span class="sc">$</span>country <span class="sc">%in%</span> rv<span class="sc">$</span>selected_countries, <span class="dv">1</span>, <span class="fl">0.5</span>),</span>
+<span id="cb11-61"><a></a>                             <span class="at">highlight =</span> <span class="fu">highlightOptions</span>(</span>
+<span id="cb11-62"><a></a>                               <span class="at">fillOpacity =</span> <span class="dv">1</span>,</span>
+<span id="cb11-63"><a></a>                               <span class="at">bringToFront =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-64"><a></a>        )</span>
+<span id="cb11-65"><a></a>      </span>
+<span id="cb11-66"><a></a>    })</span>
+<span id="cb11-67"><a></a>    </span>
+<span id="cb11-68"><a></a>    output<span class="sc">$</span>filtered_country <span class="ot">&lt;-</span> shiny<span class="sc">::</span><span class="fu">renderPrint</span>({</span>
+<span id="cb11-69"><a></a>      <span class="fu">paste</span>(rv<span class="sc">$</span>selected_countries, <span class="at">collapse =</span> <span class="st">','</span>)</span>
+<span id="cb11-70"><a></a>    })</span>
+<span id="cb11-71"><a></a>    </span>
+<span id="cb11-72"><a></a>    <span class="co"># Leaflet</span></span>
+<span id="cb11-73"><a></a>    output<span class="sc">$</span>mapfilter <span class="ot">&lt;-</span> leaflet<span class="sc">::</span><span class="fu">renderLeaflet</span>({ <span class="co"># rendering the filter map</span></span>
+<span id="cb11-74"><a></a>      </span>
+<span id="cb11-75"><a></a>      leaflet<span class="sc">::</span><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb11-76"><a></a>        leaflet<span class="sc">::</span><span class="fu">addTiles</span>() <span class="sc">|&gt;</span> <span class="co"># The is the base map</span></span>
+<span id="cb11-77"><a></a>        leaflet<span class="sc">::</span><span class="fu">addPolygons</span>(<span class="at">data =</span> mapdata, </span>
+<span id="cb11-78"><a></a>                             <span class="at">color =</span> <span class="st">'#316879'</span>, </span>
+<span id="cb11-79"><a></a>                             <span class="at">weight =</span> <span class="dv">1</span>,</span>
+<span id="cb11-80"><a></a>                             <span class="at">layerId =</span> <span class="sc">~</span>country,</span>
+<span id="cb11-81"><a></a>                             <span class="at">label =</span> <span class="sc">~</span>country,</span>
+<span id="cb11-82"><a></a>                             <span class="at">fillColor =</span> <span class="st">"#7fe7dc"</span>,</span>
+<span id="cb11-83"><a></a>                             <span class="at">fillOpacity =</span> .<span class="dv">5</span>,</span>
+<span id="cb11-84"><a></a>                             <span class="at">highlight =</span> <span class="fu">highlightOptions</span>(</span>
+<span id="cb11-85"><a></a>                               <span class="at">fillOpacity =</span> <span class="dv">1</span>,</span>
+<span id="cb11-86"><a></a>                               <span class="at">bringToFront =</span> <span class="cn">TRUE</span></span>
+<span id="cb11-87"><a></a>                             )) <span class="sc">|&gt;</span></span>
+<span id="cb11-88"><a></a>        leaflet<span class="sc">::</span><span class="fu">setView</span>(<span class="at">zoom =</span> <span class="dv">1</span>, <span class="at">lng =</span> <span class="dv">0</span>, <span class="at">lat =</span><span class="dv">50</span>)</span>
+<span id="cb11-89"><a></a>      </span>
+<span id="cb11-90"><a></a>    })</span>
+<span id="cb11-91"><a></a>    </span>
+<span id="cb11-92"><a></a>    <span class="co"># Reset the map filter</span></span>
+<span id="cb11-93"><a></a>    shiny<span class="sc">::</span><span class="fu">observeEvent</span>(input<span class="sc">$</span>resetmap, {</span>
+<span id="cb11-94"><a></a>      </span>
+<span id="cb11-95"><a></a>      rv<span class="sc">$</span>selected_countries <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb11-96"><a></a>      rv<span class="sc">$</span>last_click_id <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb11-97"><a></a>      rv<span class="sc">$</span>filtered_data <span class="ot">&lt;-</span> mapdata</span>
+<span id="cb11-98"><a></a>      </span>
+<span id="cb11-99"><a></a>      <span class="fu">leafletProxy</span>(<span class="st">"mapfilter"</span>, session) <span class="sc">|&gt;</span></span>
+<span id="cb11-100"><a></a>        leaflet<span class="sc">::</span><span class="fu">addPolygons</span>(<span class="at">data =</span> mapdata, </span>
+<span id="cb11-101"><a></a>                             <span class="at">color =</span> <span class="st">'#316879'</span>, </span>
+<span id="cb11-102"><a></a>                             <span class="at">weight =</span> <span class="dv">1</span>,</span>
+<span id="cb11-103"><a></a>                             <span class="at">layerId =</span> <span class="sc">~</span>country,</span>
+<span id="cb11-104"><a></a>                             <span class="at">label =</span> <span class="sc">~</span>country,</span>
+<span id="cb11-105"><a></a>                             <span class="at">fillColor =</span> <span class="st">"#7fe7dc"</span>,</span>
+<span id="cb11-106"><a></a>                             <span class="at">fillOpacity =</span> .<span class="dv">5</span>,</span>
+<span id="cb11-107"><a></a>                             <span class="at">highlight =</span> <span class="fu">highlightOptions</span>(</span>
+<span id="cb11-108"><a></a>                               <span class="at">fillOpacity =</span> <span class="dv">1</span>,</span>
+<span id="cb11-109"><a></a>                               <span class="at">bringToFront =</span> <span class="cn">TRUE</span></span>
+<span id="cb11-110"><a></a>                             )) <span class="sc">|&gt;</span></span>
+<span id="cb11-111"><a></a>        leaflet<span class="sc">::</span><span class="fu">setView</span>(<span class="at">zoom =</span> <span class="dv">1</span>, <span class="at">lng =</span> <span class="dv">0</span>, <span class="at">lat =</span><span class="dv">50</span>)</span>
+<span id="cb11-112"><a></a>      </span>
+<span id="cb11-113"><a></a>    })</span>
+<span id="cb11-114"><a></a>    </span>
+<span id="cb11-115"><a></a></span>
+<span id="cb11-116"><a></a>    <span class="co"># Return reactive values</span></span>
+<span id="cb11-117"><a></a>    <span class="fu">return</span>(</span>
+<span id="cb11-118"><a></a>      <span class="fu">list</span>(</span>
+<span id="cb11-119"><a></a>        <span class="at">value =</span> shiny<span class="sc">::</span><span class="fu">reactive</span>(rv<span class="sc">$</span>selected_countries),</span>
+<span id="cb11-120"><a></a>        <span class="at">filtered  =</span> shiny<span class="sc">::</span><span class="fu">reactive</span>(rv<span class="sc">$</span>filtered_data)</span>
+<span id="cb11-121"><a></a>      )</span>
+<span id="cb11-122"><a></a>    )</span>
+<span id="cb11-123"><a></a>   </span>
+<span id="cb11-124"><a></a>}   </span>
+<span id="cb11-125"><a></a></span>
+<span id="cb11-126"><a></a></span>
+<span id="cb11-127"><a></a><span class="co"># Run the app -----</span></span>
+<span id="cb11-128"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="mini-app-map-filter---code" class="slide level2">
-<h2>Mini App: Map Filter - code</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a></span>
-<span id="cb10-2"><a></a><span class="co"># Packages -----</span></span>
-<span id="cb10-3"><a></a><span class="fu">library</span>(shiny)</span>
-<span id="cb10-4"><a></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb10-5"><a></a><span class="fu">library</span>(spData)</span>
-<span id="cb10-6"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb10-7"><a></a><span class="fu">library</span>(sf)</span>
-<span id="cb10-8"><a></a></span>
-<span id="cb10-9"><a></a><span class="co"># Prepare Data -----</span></span>
-<span id="cb10-10"><a></a><span class="fu">data</span>(world)</span>
-<span id="cb10-11"><a></a>mapdata <span class="ot">&lt;-</span> world <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">country =</span> name_long)</span>
-<span id="cb10-12"><a></a></span>
-<span id="cb10-13"><a></a><span class="co"># UI -----</span></span>
-<span id="cb10-14"><a></a>ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb10-15"><a></a>  shiny<span class="sc">::</span><span class="fu">fluidPage</span>(</span>
-<span id="cb10-16"><a></a>    shiny<span class="sc">::</span><span class="fu">wellPanel</span>(shiny<span class="sc">::</span><span class="fu">actionButton</span>(<span class="st">"resetmap"</span>, <span class="st">"Reset Map"</span>)),</span>
-<span id="cb10-17"><a></a>    leaflet<span class="sc">::</span><span class="fu">leafletOutput</span>(<span class="st">"mapfilter"</span>, <span class="at">height =</span> <span class="dv">400</span>),</span>
-<span id="cb10-18"><a></a>    shiny<span class="sc">::</span>tags<span class="sc">$</span><span class="fu">h4</span>(<span class="st">"Selected countries:"</span>),</span>
-<span id="cb10-19"><a></a>    shiny<span class="sc">::</span><span class="fu">verbatimTextOutput</span>(<span class="st">"filtered_country"</span>)</span>
-<span id="cb10-20"><a></a>  )</span>
-<span id="cb10-21"><a></a>}</span>
-<span id="cb10-22"><a></a></span>
-<span id="cb10-23"><a></a><span class="co"># Server -----</span></span>
-<span id="cb10-24"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb10-25"><a></a>    </span>
-<span id="cb10-26"><a></a>    <span class="co"># Define reactive values</span></span>
-<span id="cb10-27"><a></a>    rv <span class="ot">&lt;-</span> shiny<span class="sc">::</span><span class="fu">reactiveValues</span>(<span class="at">selected_countries =</span> <span class="cn">NULL</span>, <span class="co"># Initialize reactive value for selected counties</span></span>
-<span id="cb10-28"><a></a>                                <span class="at">last_click_id =</span> <span class="cn">NULL</span>,</span>
-<span id="cb10-29"><a></a>                                <span class="at">filtered_data =</span> mapdata) </span>
-<span id="cb10-30"><a></a>    </span>
-<span id="cb10-31"><a></a>    </span>
-<span id="cb10-32"><a></a>    shiny<span class="sc">::</span><span class="fu">observeEvent</span>(input<span class="sc">$</span>mapfilter_shape_click, { <span class="co"># this is the logic behind the "click" of the map.</span></span>
-<span id="cb10-33"><a></a>      </span>
-<span id="cb10-34"><a></a>      click <span class="ot">&lt;-</span> input<span class="sc">$</span>mapfilter_shape_click</span>
-<span id="cb10-35"><a></a>      rv<span class="sc">$</span>last_click_id <span class="ot">&lt;-</span> click<span class="sc">$</span>id </span>
-<span id="cb10-36"><a></a>      <span class="do">########## map behavior ################</span></span>
-<span id="cb10-37"><a></a>      </span>
-<span id="cb10-38"><a></a>      <span class="co"># If a country is clicked</span></span>
-<span id="cb10-39"><a></a>      <span class="cf">if</span> (click<span class="sc">$</span>id <span class="sc">%in%</span> rv<span class="sc">$</span>selected_countries) {</span>
-<span id="cb10-40"><a></a>        <span class="co"># If selected, remove it</span></span>
-<span id="cb10-41"><a></a>        rv<span class="sc">$</span>selected_countries <span class="ot">&lt;-</span> rv<span class="sc">$</span>selected_countries[rv<span class="sc">$</span>selected_countries <span class="sc">!=</span> click<span class="sc">$</span>id]</span>
-<span id="cb10-42"><a></a>        </span>
-<span id="cb10-43"><a></a>      } <span class="cf">else</span> <span class="cf">if</span>(click<span class="sc">$</span>id <span class="sc">==</span> <span class="st">"selected"</span>){ <span class="co"># when a county is clicked again it is removed</span></span>
-<span id="cb10-44"><a></a>        </span>
-<span id="cb10-45"><a></a>        rv<span class="sc">$</span>selected_countries <span class="ot">&lt;-</span> rv<span class="sc">$</span>selected_countries[rv<span class="sc">$</span>selected_countries <span class="sc">!=</span> <span class="fu">tail</span>(rv<span class="sc">$</span>selected_countries, <span class="at">n =</span> <span class="dv">1</span>)]</span>
-<span id="cb10-46"><a></a>        </span>
-<span id="cb10-47"><a></a>      }<span class="cf">else</span> {</span>
-<span id="cb10-48"><a></a>        <span class="co"># If not selected, add it</span></span>
-<span id="cb10-49"><a></a>        rv<span class="sc">$</span>selected_countries <span class="ot">&lt;-</span> <span class="fu">c</span>(rv<span class="sc">$</span>selected_countries, click<span class="sc">$</span>id)</span>
-<span id="cb10-50"><a></a>      }</span>
-<span id="cb10-51"><a></a>      </span>
-<span id="cb10-52"><a></a>      <span class="co"># Now update the leaflet</span></span>
-<span id="cb10-53"><a></a>      leaflet<span class="sc">::</span><span class="fu">leafletProxy</span>(<span class="st">"mapfilter"</span>, session) <span class="sc">|&gt;</span></span>
-<span id="cb10-54"><a></a>        leaflet<span class="sc">::</span><span class="fu">addPolygons</span>(<span class="at">data =</span> mapdata,</span>
-<span id="cb10-55"><a></a>                             <span class="at">layerId =</span> <span class="sc">~</span>country,</span>
-<span id="cb10-56"><a></a>                             <span class="at">label =</span> <span class="sc">~</span>country,</span>
-<span id="cb10-57"><a></a>                             <span class="at">fillColor =</span> <span class="fu">ifelse</span>(mapdata<span class="sc">$</span>country <span class="sc">%in%</span> rv<span class="sc">$</span>selected_countries, <span class="st">"#F47A60"</span>, <span class="st">"#7fe7dc"</span>), <span class="co"># Change fill color based on selection</span></span>
-<span id="cb10-58"><a></a>                             <span class="at">col =</span> <span class="st">"#316879"</span>,</span>
-<span id="cb10-59"><a></a>                             <span class="at">weight =</span> <span class="dv">2</span>,</span>
-<span id="cb10-60"><a></a>                             <span class="at">fillOpacity =</span> <span class="fu">ifelse</span>(mapdata<span class="sc">$</span>country <span class="sc">%in%</span> rv<span class="sc">$</span>selected_countries, <span class="dv">1</span>, <span class="fl">0.5</span>),</span>
-<span id="cb10-61"><a></a>                             <span class="at">highlight =</span> <span class="fu">highlightOptions</span>(</span>
-<span id="cb10-62"><a></a>                               <span class="at">fillOpacity =</span> <span class="dv">1</span>,</span>
-<span id="cb10-63"><a></a>                               <span class="at">bringToFront =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb10-64"><a></a>        )</span>
-<span id="cb10-65"><a></a>      </span>
-<span id="cb10-66"><a></a>    })</span>
-<span id="cb10-67"><a></a>    </span>
-<span id="cb10-68"><a></a>    output<span class="sc">$</span>filtered_country <span class="ot">&lt;-</span> shiny<span class="sc">::</span><span class="fu">renderPrint</span>({</span>
-<span id="cb10-69"><a></a>      <span class="fu">paste</span>(rv<span class="sc">$</span>selected_countries, <span class="at">collapse =</span> <span class="st">','</span>)</span>
-<span id="cb10-70"><a></a>    })</span>
-<span id="cb10-71"><a></a>    </span>
-<span id="cb10-72"><a></a>    <span class="co"># Leaflet</span></span>
-<span id="cb10-73"><a></a>    output<span class="sc">$</span>mapfilter <span class="ot">&lt;-</span> leaflet<span class="sc">::</span><span class="fu">renderLeaflet</span>({ <span class="co"># rendering the filter map</span></span>
-<span id="cb10-74"><a></a>      </span>
-<span id="cb10-75"><a></a>      leaflet<span class="sc">::</span><span class="fu">leaflet</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb10-76"><a></a>        leaflet<span class="sc">::</span><span class="fu">addTiles</span>() <span class="sc">|&gt;</span> <span class="co"># The is the base map</span></span>
-<span id="cb10-77"><a></a>        leaflet<span class="sc">::</span><span class="fu">addPolygons</span>(<span class="at">data =</span> mapdata, </span>
-<span id="cb10-78"><a></a>                             <span class="at">color =</span> <span class="st">'#316879'</span>, </span>
-<span id="cb10-79"><a></a>                             <span class="at">weight =</span> <span class="dv">1</span>,</span>
-<span id="cb10-80"><a></a>                             <span class="at">layerId =</span> <span class="sc">~</span>country,</span>
-<span id="cb10-81"><a></a>                             <span class="at">label =</span> <span class="sc">~</span>country,</span>
-<span id="cb10-82"><a></a>                             <span class="at">fillColor =</span> <span class="st">"#7fe7dc"</span>,</span>
-<span id="cb10-83"><a></a>                             <span class="at">fillOpacity =</span> .<span class="dv">5</span>,</span>
-<span id="cb10-84"><a></a>                             <span class="at">highlight =</span> <span class="fu">highlightOptions</span>(</span>
-<span id="cb10-85"><a></a>                               <span class="at">fillOpacity =</span> <span class="dv">1</span>,</span>
-<span id="cb10-86"><a></a>                               <span class="at">bringToFront =</span> <span class="cn">TRUE</span></span>
-<span id="cb10-87"><a></a>                             )) <span class="sc">|&gt;</span></span>
-<span id="cb10-88"><a></a>        leaflet<span class="sc">::</span><span class="fu">setView</span>(<span class="at">zoom =</span> <span class="dv">1</span>, <span class="at">lng =</span> <span class="dv">0</span>, <span class="at">lat =</span><span class="dv">50</span>)</span>
-<span id="cb10-89"><a></a>      </span>
-<span id="cb10-90"><a></a>    })</span>
-<span id="cb10-91"><a></a>    </span>
-<span id="cb10-92"><a></a>    <span class="co"># Reset the map filter</span></span>
-<span id="cb10-93"><a></a>    shiny<span class="sc">::</span><span class="fu">observeEvent</span>(input<span class="sc">$</span>resetmap, {</span>
-<span id="cb10-94"><a></a>      </span>
-<span id="cb10-95"><a></a>      rv<span class="sc">$</span>selected_countries <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb10-96"><a></a>      rv<span class="sc">$</span>last_click_id <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb10-97"><a></a>      rv<span class="sc">$</span>filtered_data <span class="ot">&lt;-</span> mapdata</span>
-<span id="cb10-98"><a></a>      </span>
-<span id="cb10-99"><a></a>      <span class="fu">leafletProxy</span>(<span class="st">"mapfilter"</span>, session) <span class="sc">|&gt;</span></span>
-<span id="cb10-100"><a></a>        leaflet<span class="sc">::</span><span class="fu">addPolygons</span>(<span class="at">data =</span> mapdata, </span>
-<span id="cb10-101"><a></a>                             <span class="at">color =</span> <span class="st">'#316879'</span>, </span>
-<span id="cb10-102"><a></a>                             <span class="at">weight =</span> <span class="dv">1</span>,</span>
-<span id="cb10-103"><a></a>                             <span class="at">layerId =</span> <span class="sc">~</span>country,</span>
-<span id="cb10-104"><a></a>                             <span class="at">label =</span> <span class="sc">~</span>country,</span>
-<span id="cb10-105"><a></a>                             <span class="at">fillColor =</span> <span class="st">"#7fe7dc"</span>,</span>
-<span id="cb10-106"><a></a>                             <span class="at">fillOpacity =</span> .<span class="dv">5</span>,</span>
-<span id="cb10-107"><a></a>                             <span class="at">highlight =</span> <span class="fu">highlightOptions</span>(</span>
-<span id="cb10-108"><a></a>                               <span class="at">fillOpacity =</span> <span class="dv">1</span>,</span>
-<span id="cb10-109"><a></a>                               <span class="at">bringToFront =</span> <span class="cn">TRUE</span></span>
-<span id="cb10-110"><a></a>                             )) <span class="sc">|&gt;</span></span>
-<span id="cb10-111"><a></a>        leaflet<span class="sc">::</span><span class="fu">setView</span>(<span class="at">zoom =</span> <span class="dv">1</span>, <span class="at">lng =</span> <span class="dv">0</span>, <span class="at">lat =</span><span class="dv">50</span>)</span>
-<span id="cb10-112"><a></a>      </span>
-<span id="cb10-113"><a></a>    })</span>
-<span id="cb10-114"><a></a>    </span>
-<span id="cb10-115"><a></a></span>
-<span id="cb10-116"><a></a>    <span class="co"># Return reactive values</span></span>
-<span id="cb10-117"><a></a>    <span class="fu">return</span>(</span>
-<span id="cb10-118"><a></a>      <span class="fu">list</span>(</span>
-<span id="cb10-119"><a></a>        <span class="at">value =</span> shiny<span class="sc">::</span><span class="fu">reactive</span>(rv<span class="sc">$</span>selected_countries),</span>
-<span id="cb10-120"><a></a>        <span class="at">filtered  =</span> shiny<span class="sc">::</span><span class="fu">reactive</span>(rv<span class="sc">$</span>filtered_data)</span>
-<span id="cb10-121"><a></a>      )</span>
-<span id="cb10-122"><a></a>    )</span>
-<span id="cb10-123"><a></a>   </span>
-<span id="cb10-124"><a></a>}   </span>
-<span id="cb10-125"><a></a></span>
-<span id="cb10-126"><a></a></span>
-<span id="cb10-127"><a></a><span class="co"># Run the app -----</span></span>
-<span id="cb10-128"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exercise-5---map-filter-to-module" class="slide level2">
+<h2>Exercise 5 - Map filter to module</h2>
+<p>Can you convert it into a module?</p>
 </section>
 <section id="thank-you-questions" class="slide level2">
 <h2>Thank you &amp; Questions?</h2>

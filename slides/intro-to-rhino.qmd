@@ -195,7 +195,6 @@ The workshop will run for 1 hour (recorded).
 fs::dir_tree("./github/gladse", recurse = 2)
 ```
 
-   
 
 ::::: columns
 ::: {.column width="50%"}
@@ -380,12 +379,13 @@ ui <- function(id) {
 
 -   We will convert a traditional shiny app into a modular Rhino app script
 
--   Check the traditional shiny app script \[../exercise/01_hello.R\]
+-   Check the traditional shiny app script: [01_hello.R](https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/01_hello.R)
 
--   Complete the modular Rhino app script \[../exercise/01_hello_rhino.R\]
+-   Complete the modular Rhino app script: [01_hello_rhino.R](https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/01_hello_rhino.R) 
 
 -   Copy the syntax and create your `/app/view/hist.R`
 :::
+
 :::::
 
 ------------------------------------------------------------------------
@@ -405,7 +405,6 @@ ui <- function(id) {
 ::::: columns
 ::: {.column width="75%"}
 -   Call the 'hist.R' from your `main.R` with the following syntax
--   See the app
 
 ```{r}
 #| echo: true
@@ -454,8 +453,8 @@ server <- function(id) {
 
 ::::: columns
 ::: {.column width="75%"}
--   Copy the syntax `/exercise/02_hello_mod.R`
--   create and update your `/app/view/hello.R`
+-   Copy the syntax: [02_hello_mod.R](https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/02_hello_mod.R)
+-   Create and update your `/app/view/hello.R`
 -   Call the 'hello.R' from your `main.R`
 -   See the app
 
@@ -475,7 +474,7 @@ ui <- function(id) {
     shiny$h1("Hello, World!"),
     
     ## update the inputID with ns()
-    shiny$textInput(inputId = , 
+    shiny$textInput(inputId = ?, 
                     label = "Your Name",
                     value = '',
                     placeholder = NULL),
@@ -509,14 +508,15 @@ server <- function(id) {
 
 ------------------------------------------------------------------------
 
-## Exercise 3 - Logic and View \[Step1\]
+## Exercise 3 - Reverse the word! - Logic\[Step1\]
 
 ::::: columns
 ::: {.column width="75%"}
-Reverse the word! - logic
 
--   Copy the following syntax and create your `app/logic/reverse.R`
--   `/exercise/03_reverse_logic.R`
+
+-   Copy the following syntax: [03_reverse_logic.R](https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/03_reverse_logic.R)
+
+-   Create your `app/logic/reverse.R`
 
 ```{r}
 #| echo: true
@@ -534,6 +534,7 @@ reverse_words <- function(text) {
 }
 
 ```
+
 :::
 
 ::: {.column width="25%"}
@@ -541,6 +542,7 @@ reverse_words <- function(text) {
 
 </iframe>
 :::
+
 :::::
 
 ------------------------------------------------------------------------
@@ -549,13 +551,15 @@ reverse_words <- function(text) {
 
 ::::: columns
 ::: {.column width="75%"}
--   Refer to `/exercise/03_reverse.R` to update your `app/view/hello.R`
+-   Refer to [03_reverse.R](https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/03_reverse.R) 
+-   Update your `app/view/hello.R`
 
     -   call the function at beginning
 
     ```{r}
     #| echo: true
     #| eval: false
+    
     box::use(
       app/logic/reverse[reverse_words]
     )
@@ -572,9 +576,70 @@ reverse_words <- function(text) {
 
 </iframe>
 :::
+
 :::::
 
 ------------------------------------------------------------------------
+
+## Exercise 4 - Logic and View and Static [Step 1]
+
+
+::::: columns
+::: {.column width="75%"}
+-   Download the [img](https://github.com/RoryChenXY/rhino-intro-rladiessyd/tree/main/exercise/img) folder into your `app/static` folder
+-   Refer to [04_const.R](https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/04_const.R), create your  `app/logic/const.R`
+-   Refer to [04_favorites.R](https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/04_favorites.R), complete the script and create your  `app/view/favorites.R`
+
+
+:::
+
+::: {.column width="25%"}
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=5&amp;sec=0" frameborder="0">
+
+</iframe>
+:::
+
+:::::
+
+---
+
+
+## Exercise 4 - Logic and View and Static [Step 2]
+
+
+::::: columns
+::: {.column width="75%"}
+-   Update your `main.R` to call the 'favorite' module 
+
+```
+box::use(
+ # Call the const we defined
+)
+
+# Call the favorite module with different options
+
+## UI
+favorites$ui(ns("fruits"), category = "fruits", choices = const$fruits),
+favorites$ui(ns("vege"), category = "vegetables", choices = const$vegetables),
+
+## Server
+favorites$server("fruits")
+favorites$server("vege")
+
+```
+
+:::
+
+::: {.column width="25%"}
+<iframe style="width:100%;max-width:360px;height:360px;" src="https://stopwatch-app.com/widget/timer?theme=dark&amp;color=purple&amp;hrs=0&amp;min=5&amp;sec=0" frameborder="0">
+
+</iframe>
+:::
+
+:::::
+
+---
+
 
 ## 2. Quality ✅
 
@@ -595,9 +660,10 @@ reverse_words <- function(text) {
 
 ------------------------------------------------------------------------
 
-## Exercise 5 - AI to help - Map filter!
+## Exercise 5 - Map filter!
 
-## Mini App: Map Filter - code
+Refer to this map filter app
+[05_mapfilter.R](https://github.com/RoryChenXY/rhino-intro-rladiessyd/blob/main/exercise/05_mapfilter.R)
 
 ``` r
 
@@ -731,5 +797,10 @@ shinyApp(ui = ui, server = server)
 ```
 
 ------------------------------------------------------------------------
+
+## Exercise 5 - Map filter to module
+
+Can you convert it into a module?
+
 
 ## Thank you & Questions?

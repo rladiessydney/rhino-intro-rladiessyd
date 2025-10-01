@@ -2,10 +2,11 @@ box::use(
   shiny,
 )
 
+
+# Define the images function
 images <- function(filenames) {
   lapply(filenames, function(name) {
     shiny$img(
-      # Step 8:
       src = paste0("/static/img/", name, ".jpg")
     )
   })
@@ -19,7 +20,7 @@ ui <- function(id, category, choices) {
     
     # Step 7: Add a checkboxGroupInput to the UI of the favorites module.
     shiny$checkboxGroupInput(
-      ns("favitem"),
+      inputId = _________,
       choices = choices,
       label = category,
       selected = NULL,
@@ -38,7 +39,7 @@ server <- function(id) {
     # Step 8:
     
     output$selimg <- shiny::renderUI({
-      images(input$favitem)
+      images(input$_________)
     })
     
   })
