@@ -508,7 +508,7 @@ server <- function(id) {
 
 ------------------------------------------------------------------------
 
-## Exercise 3 - Reverse the word! - Logic\[Step1\]
+## Exercise 3 - Reverse word! - Logic\[Step1\]
 
 ::::: columns
 ::: {.column width="75%"}
@@ -581,7 +581,7 @@ reverse_words <- function(text) {
 
 ------------------------------------------------------------------------
 
-## Exercise 4 - Logic and View and Static [Step 1]
+## Exercise 4 - Logic & Static [Step 1]
 
 
 ::::: columns
@@ -604,7 +604,7 @@ reverse_words <- function(text) {
 ---
 
 
-## Exercise 4 - Logic and View and Static [Step 2]
+## Exercise 4 - Logic & Static [Step 2]
 
 
 ::::: columns

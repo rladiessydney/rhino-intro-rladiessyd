@@ -126,11 +126,11 @@
     "text": "Exercise 2 - View [Step 2]\n\n\n\nCopy the syntax: 02_hello_mod.R\nCreate and update your /app/view/hello.R\nCall the ‘hello.R’ from your main.R\nSee the app\n\n\n# app/view/hello.R\n\nbox::use(\n  shiny,\n)\n\n#' @export\nui &lt;- function(id) {\n  ns &lt;- shiny$NS(id)\n  shiny$div(\n    shiny$h1(\"Hello, World!\"),\n    \n    ## update the inputID with ns()\n    shiny$textInput(inputId = ?, \n                    label = \"Your Name\",\n                    value = '',\n                    placeholder = NULL),\n    \n    \n    ## update the outputId with ns()\n    shiny$textOutput(outputId = ?)\n  )\n}\n\n#' @export\nserver &lt;- function(id) {\n  shiny$moduleServer(id, function(input, output, session) {\n    # inputID & # outputId\n    \n    output$______ &lt;- shiny::renderText({\n      paste('Hello, ', input$_____, \"!\", sep = '')\n    })\n  })\n}"
   },
   {
-    "objectID": "slides/intro-to-rhino.html#exercise-3---reverse-the-word---logicstep1",
-    "href": "slides/intro-to-rhino.html#exercise-3---reverse-the-word---logicstep1",
+    "objectID": "slides/intro-to-rhino.html#exercise-3---reverse-word---logicstep1",
+    "href": "slides/intro-to-rhino.html#exercise-3---reverse-word---logicstep1",
     "title": "",
-    "section": "Exercise 3 - Reverse the word! - Logic[Step1]",
-    "text": "Exercise 3 - Reverse the word! - Logic[Step1]\n\n\n\nCopy the following syntax: 03_reverse_logic.R\nCreate your app/logic/reverse.R\n\n\n# app/logic/reverse.R\n\nbox::use(\n  stringi[stri_reverse]\n)\n\n#' @export\nreverse_words &lt;- function(text) {\n  stringi::stri_reverse(text)\n}"
+    "section": "Exercise 3 - Reverse word! - Logic[Step1]",
+    "text": "Exercise 3 - Reverse word! - Logic[Step1]\n\n\n\nCopy the following syntax: 03_reverse_logic.R\nCreate your app/logic/reverse.R\n\n\n# app/logic/reverse.R\n\nbox::use(\n  stringi[stri_reverse]\n)\n\n#' @export\nreverse_words &lt;- function(text) {\n  stringi::stri_reverse(text)\n}"
   },
   {
     "objectID": "slides/intro-to-rhino.html#exercise-3---logic-and-view-step2",
@@ -140,18 +140,18 @@
     "text": "Exercise 3 - Logic and View [Step2]\n\n\n\nRefer to 03_reverse.R\nUpdate your app/view/hello.R\n\ncall the function at beginning\n\n\nbox::use(\n  app/logic/reverse[reverse_words]\n)\n\n\nAdd new output with reversed name in UI\nUpdate the Server"
   },
   {
-    "objectID": "slides/intro-to-rhino.html#exercise-4---logic-and-view-and-static-step-1",
-    "href": "slides/intro-to-rhino.html#exercise-4---logic-and-view-and-static-step-1",
+    "objectID": "slides/intro-to-rhino.html#exercise-4---logic-static-step-1",
+    "href": "slides/intro-to-rhino.html#exercise-4---logic-static-step-1",
     "title": "",
-    "section": "Exercise 4 - Logic and View and Static [Step 1]",
-    "text": "Exercise 4 - Logic and View and Static [Step 1]\n\n\n\nDownload the img folder into your app/static folder\nRefer to 04_const.R, create your app/logic/const.R\nRefer to 04_favorites.R, complete the script and create your app/view/favorites.R"
+    "section": "Exercise 4 - Logic & Static [Step 1]",
+    "text": "Exercise 4 - Logic & Static [Step 1]\n\n\n\nDownload the img folder into your app/static folder\nRefer to 04_const.R, create your app/logic/const.R\nRefer to 04_favorites.R, complete the script and create your app/view/favorites.R"
   },
   {
-    "objectID": "slides/intro-to-rhino.html#exercise-4---logic-and-view-and-static-step-2",
-    "href": "slides/intro-to-rhino.html#exercise-4---logic-and-view-and-static-step-2",
+    "objectID": "slides/intro-to-rhino.html#exercise-4---logic-static-step-2",
+    "href": "slides/intro-to-rhino.html#exercise-4---logic-static-step-2",
     "title": "",
-    "section": "Exercise 4 - Logic and View and Static [Step 2]",
-    "text": "Exercise 4 - Logic and View and Static [Step 2]\n\n\n\nUpdate your main.R to call the ‘favorite’ module\n\nbox::use(\n # Call the const we defined\n)\n\n# Call the favorite module with different options\n\n## UI\nfavorites$ui(ns(\"fruits\"), category = \"fruits\", choices = const$fruits),\nfavorites$ui(ns(\"vege\"), category = \"vegetables\", choices = const$vegetables),\n\n## Server\nfavorites$server(\"fruits\")\nfavorites$server(\"vege\")"
+    "section": "Exercise 4 - Logic & Static [Step 2]",
+    "text": "Exercise 4 - Logic & Static [Step 2]\n\n\n\nUpdate your main.R to call the ‘favorite’ module\n\nbox::use(\n # Call the const we defined\n)\n\n# Call the favorite module with different options\n\n## UI\nfavorites$ui(ns(\"fruits\"), category = \"fruits\", choices = const$fruits),\nfavorites$ui(ns(\"vege\"), category = \"vegetables\", choices = const$vegetables),\n\n## Server\nfavorites$server(\"fruits\")\nfavorites$server(\"vege\")"
   },
   {
     "objectID": "slides/intro-to-rhino.html#quality",
